@@ -86,14 +86,18 @@ Exact installed versions: `requirements-lock.txt`.
 ## Status
 
 See `docs/RESEARCH_STATUS.md` and `MILESTONE_STATUS.md`. Headline so far,
-now checked at both single-head (Milestone 1) and 20-stratum multi-head/
-layer scale (Milestone 2): local-damage and attention-mass eviction both
-clearly beat random, but show **no measured advantage of one over the
-other** — the honest reading is that attention mass, far cheaper to
-compute, is currently the stronger practical baseline. Sensitivity-based
-budget allocation across heads/layers likewise showed no consistent
-advantage over a uniform budget. Both are real, checked null results, not
-failures to find something that was assumed to be there.
+measured on **`EleutherAI/pythia-160m`, the layer/head/prompt/context
+lengths actually tested in this repo's configs** (not claimed to
+generalize beyond them), now checked at both single-head (Milestone 1)
+and 20-stratum multi-head/layer scale (Milestone 2): local-damage and
+attention-mass eviction both clearly beat random, but show **no measured
+advantage of one over the other** — the honest reading is that attention
+mass, far cheaper to compute, is currently the stronger practical
+baseline. Sensitivity-based budget allocation across heads/layers likewise
+showed no consistent advantage over a uniform budget. Both are real,
+checked null results, not failures to find something that was assumed to
+be there. No wall-clock speedup is measured or claimed, and no claim is
+made that `d_B^local` predicts downstream damage universally.
 
 ```bash
 # Milestone 2
