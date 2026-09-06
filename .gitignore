@@ -1,0 +1,24 @@
+.venv/
+*.egg-info/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# Result policy: small summary/config/result JSON files that define the
+# checkpoint ARE tracked (see docs/RESEARCH_STATUS.md / MILESTONE_STATUS.md
+# for why they're small enough -- currently a few KB to ~200KB each).
+# What's ignored is anything that could actually grow large: model
+# weights/caches, raw tensors, and any future big dump format. If a later
+# experiment writes a genuinely large raw artifact under results/, name it
+# with one of the extensions below (or add a new rule) rather than
+# committing it.
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.npy
+*.npz
+*.pkl
+*.parquet
+*.h5

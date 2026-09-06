@@ -1,0 +1,32 @@
+{
+  "n_strata": 16,
+  "coarse_between_head_layer_spearman": {
+    "statistic": "spearman(mean d_B^local per (layer,head), mean Tier-B KL per (layer,head))",
+    "n": 16,
+    "rho": 0.7735294117647058,
+    "p": 0.00043935565171172104
+  },
+  "fine_within_head_spearman": {
+    "statistic": "median over strata of spearman(d_B^local, Tier-B KL) within each (layer,head)",
+    "n_strata_with_variance": 15,
+    "median_rho": 0.3714285714285715,
+    "all_rhos": [
+      0.3714285714285715,
+      -0.3714285714285715,
+      -0.7714285714285715,
+      -0.8857142857142858,
+      0.7714285714285715,
+      0.8857142857142858,
+      0.7714285714285715,
+      -0.4285714285714286,
+      1.0,
+      0.8285714285714287,
+      -0.2571428571428572,
+      0.2571428571428572,
+      0.6375355777548621,
+      0.6546536707079772,
+      -0.7714285714285715
+    ]
+  },
+  "interpretation": "Coarse (between-head/layer) and fine (within-head block-ranking) predictive power are reported separately and must not be pooled into one statistic. EXPLORATORY -- not a frozen preregistration."
+}

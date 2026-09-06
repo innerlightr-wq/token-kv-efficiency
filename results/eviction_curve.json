@@ -1,0 +1,318 @@
+{
+  "layer": 3,
+  "head": 2,
+  "rows": [
+    {
+      "prompt": 0,
+      "policy": "attention_mass",
+      "q": 0.0,
+      "k_evicted": 0,
+      "n_candidates": 55,
+      "kl": 0.0
+    },
+    {
+      "prompt": 0,
+      "policy": "local_damage",
+      "q": 0.0,
+      "k_evicted": 0,
+      "n_candidates": 55,
+      "kl": 0.0
+    },
+    {
+      "prompt": 0,
+      "policy": "random_mean",
+      "q": 0.0,
+      "k_evicted": 0,
+      "n_candidates": 55,
+      "kl": 0.0,
+      "kl_std": 0.0,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 0,
+      "policy": "attention_mass",
+      "q": 0.1,
+      "k_evicted": 6,
+      "n_candidates": 55,
+      "kl": 8.501001471964879e-05
+    },
+    {
+      "prompt": 0,
+      "policy": "local_damage",
+      "q": 0.1,
+      "k_evicted": 6,
+      "n_candidates": 55,
+      "kl": 8.501001471964879e-05
+    },
+    {
+      "prompt": 0,
+      "policy": "random_mean",
+      "q": 0.1,
+      "k_evicted": 6,
+      "n_candidates": 55,
+      "kl": 0.0026436462075870555,
+      "kl_std": 0.0021291512279201182,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 0,
+      "policy": "attention_mass",
+      "q": 0.2,
+      "k_evicted": 11,
+      "n_candidates": 55,
+      "kl": 0.0008383154428673828
+    },
+    {
+      "prompt": 0,
+      "policy": "local_damage",
+      "q": 0.2,
+      "k_evicted": 11,
+      "n_candidates": 55,
+      "kl": 0.0008383154428673828
+    },
+    {
+      "prompt": 0,
+      "policy": "random_mean",
+      "q": 0.2,
+      "k_evicted": 11,
+      "n_candidates": 55,
+      "kl": 0.004191406012280264,
+      "kl_std": 0.0035126570945407886,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 0,
+      "policy": "attention_mass",
+      "q": 0.3,
+      "k_evicted": 16,
+      "n_candidates": 55,
+      "kl": 0.001654065291613652
+    },
+    {
+      "prompt": 0,
+      "policy": "local_damage",
+      "q": 0.3,
+      "k_evicted": 16,
+      "n_candidates": 55,
+      "kl": 0.001654065291613652
+    },
+    {
+      "prompt": 0,
+      "policy": "random_mean",
+      "q": 0.3,
+      "k_evicted": 16,
+      "n_candidates": 55,
+      "kl": 0.005375128520440311,
+      "kl_std": 0.003960382402938198,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 0,
+      "policy": "attention_mass",
+      "q": 0.4,
+      "k_evicted": 22,
+      "n_candidates": 55,
+      "kl": 0.002570614835050007
+    },
+    {
+      "prompt": 0,
+      "policy": "local_damage",
+      "q": 0.4,
+      "k_evicted": 22,
+      "n_candidates": 55,
+      "kl": 0.002570614835050007
+    },
+    {
+      "prompt": 0,
+      "policy": "random_mean",
+      "q": 0.4,
+      "k_evicted": 22,
+      "n_candidates": 55,
+      "kl": 0.00721781707603328,
+      "kl_std": 0.0038767433616635157,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 0,
+      "policy": "attention_mass",
+      "q": 0.5,
+      "k_evicted": 28,
+      "n_candidates": 55,
+      "kl": 0.010006169580151712
+    },
+    {
+      "prompt": 0,
+      "policy": "local_damage",
+      "q": 0.5,
+      "k_evicted": 28,
+      "n_candidates": 55,
+      "kl": 0.010006169580151712
+    },
+    {
+      "prompt": 0,
+      "policy": "random_mean",
+      "q": 0.5,
+      "k_evicted": 28,
+      "n_candidates": 55,
+      "kl": 0.010331063658912953,
+      "kl_std": 0.0037842971040579466,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 1,
+      "policy": "attention_mass",
+      "q": 0.0,
+      "k_evicted": 0,
+      "n_candidates": 41,
+      "kl": 0.0
+    },
+    {
+      "prompt": 1,
+      "policy": "local_damage",
+      "q": 0.0,
+      "k_evicted": 0,
+      "n_candidates": 41,
+      "kl": 0.0
+    },
+    {
+      "prompt": 1,
+      "policy": "random_mean",
+      "q": 0.0,
+      "k_evicted": 0,
+      "n_candidates": 41,
+      "kl": 0.0,
+      "kl_std": 0.0,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 1,
+      "policy": "attention_mass",
+      "q": 0.1,
+      "k_evicted": 4,
+      "n_candidates": 41,
+      "kl": 0.0012175510988724422
+    },
+    {
+      "prompt": 1,
+      "policy": "local_damage",
+      "q": 0.1,
+      "k_evicted": 4,
+      "n_candidates": 41,
+      "kl": 0.0012175510988724422
+    },
+    {
+      "prompt": 1,
+      "policy": "random_mean",
+      "q": 0.1,
+      "k_evicted": 4,
+      "n_candidates": 41,
+      "kl": 0.00420122738620953,
+      "kl_std": 0.006478570437960661,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 1,
+      "policy": "attention_mass",
+      "q": 0.2,
+      "k_evicted": 8,
+      "n_candidates": 41,
+      "kl": 0.0006667069534675401
+    },
+    {
+      "prompt": 1,
+      "policy": "local_damage",
+      "q": 0.2,
+      "k_evicted": 8,
+      "n_candidates": 41,
+      "kl": 0.0008567978308765718
+    },
+    {
+      "prompt": 1,
+      "policy": "random_mean",
+      "q": 0.2,
+      "k_evicted": 8,
+      "n_candidates": 41,
+      "kl": 0.0058405699630401375,
+      "kl_std": 0.006403460741095306,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 1,
+      "policy": "attention_mass",
+      "q": 0.3,
+      "k_evicted": 12,
+      "n_candidates": 41,
+      "kl": 0.00442071759595954
+    },
+    {
+      "prompt": 1,
+      "policy": "local_damage",
+      "q": 0.3,
+      "k_evicted": 12,
+      "n_candidates": 41,
+      "kl": 0.00442071759595954
+    },
+    {
+      "prompt": 1,
+      "policy": "random_mean",
+      "q": 0.3,
+      "k_evicted": 12,
+      "n_candidates": 41,
+      "kl": 0.011573534043357946,
+      "kl_std": 0.00925228790442176,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 1,
+      "policy": "attention_mass",
+      "q": 0.4,
+      "k_evicted": 16,
+      "n_candidates": 41,
+      "kl": 0.003516812092078098
+    },
+    {
+      "prompt": 1,
+      "policy": "local_damage",
+      "q": 0.4,
+      "k_evicted": 16,
+      "n_candidates": 41,
+      "kl": 0.003516812092078098
+    },
+    {
+      "prompt": 1,
+      "policy": "random_mean",
+      "q": 0.4,
+      "k_evicted": 16,
+      "n_candidates": 41,
+      "kl": 0.02010912891027803,
+      "kl_std": 0.018837608473532552,
+      "n_seeds": 5
+    },
+    {
+      "prompt": 1,
+      "policy": "attention_mass",
+      "q": 0.5,
+      "k_evicted": 20,
+      "n_candidates": 41,
+      "kl": 0.0026114252936524883
+    },
+    {
+      "prompt": 1,
+      "policy": "local_damage",
+      "q": 0.5,
+      "k_evicted": 20,
+      "n_candidates": 41,
+      "kl": 0.0026114252936524883
+    },
+    {
+      "prompt": 1,
+      "policy": "random_mean",
+      "q": 0.5,
+      "k_evicted": 20,
+      "n_candidates": 41,
+      "kl": 0.023258286066279853,
+      "kl_std": 0.02216917364279714,
+      "n_seeds": 5
+    }
+  ]
+}

@@ -1,0 +1,1739 @@
+[
+  {
+    "prompt": 0,
+    "q_global": 0.1,
+    "policy": "uniform_mass",
+    "kl": 0.001089965780771119,
+    "n_entries_removed": 120,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.1,
+    "policy": "uniform_local",
+    "kl": 0.0007193573565759491,
+    "n_entries_removed": 120,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.1,
+    "policy": "allocated_mass",
+    "kl": 0.0007961629119244969,
+    "n_entries_removed": 114,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.1,
+    "policy": "allocated_local",
+    "kl": 0.0005340688913804239,
+    "n_entries_removed": 114,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.1,
+    "policy": "uniform_random",
+    "kl": 0.0008254315479548985,
+    "kl_std": 0.0003735927516257379,
+    "n_entries_removed": 120.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          9,
+          6
+        ]
+      ],
+      [
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.2,
+    "policy": "uniform_mass",
+    "kl": 0.0036533722182314817,
+    "n_entries_removed": 220,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.2,
+    "policy": "uniform_local",
+    "kl": 0.002204003644196194,
+    "n_entries_removed": 220,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.2,
+    "policy": "allocated_mass",
+    "kl": 0.003431206560407486,
+    "n_entries_removed": 219,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.2,
+    "policy": "allocated_local",
+    "kl": 0.0020231105678390586,
+    "n_entries_removed": 219,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.2,
+    "policy": "uniform_random",
+    "kl": 0.010062854623502046,
+    "kl_std": 0.006176561475638468,
+    "n_entries_removed": 220.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          9,
+          6
+        ]
+      ],
+      [
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.3,
+    "policy": "uniform_mass",
+    "kl": 0.006366270148798214,
+    "n_entries_removed": 320,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.3,
+    "policy": "uniform_local",
+    "kl": 0.00848220649033605,
+    "n_entries_removed": 320,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.3,
+    "policy": "allocated_mass",
+    "kl": 0.006652023280297382,
+    "n_entries_removed": 334,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.3,
+    "policy": "allocated_local",
+    "kl": 0.008281676562508502,
+    "n_entries_removed": 334,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.3,
+    "policy": "uniform_random",
+    "kl": 0.018106651412312224,
+    "kl_std": 0.01624277681304497,
+    "n_entries_removed": 320.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          9,
+          6
+        ],
+        [
+          11,
+          3
+        ]
+      ],
+      [
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.4,
+    "policy": "uniform_mass",
+    "kl": 0.011823098706442846,
+    "n_entries_removed": 440,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.4,
+    "policy": "uniform_local",
+    "kl": 0.010015822722838439,
+    "n_entries_removed": 440,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.4,
+    "policy": "allocated_mass",
+    "kl": 0.011696864160957852,
+    "n_entries_removed": 436,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.4,
+    "policy": "allocated_local",
+    "kl": 0.010071754007463327,
+    "n_entries_removed": 436,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.4,
+    "policy": "uniform_random",
+    "kl": 0.01949337953006811,
+    "kl_std": 0.010781841874749759,
+    "n_entries_removed": 440.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          9,
+          6
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.5,
+    "policy": "uniform_mass",
+    "kl": 0.017080209424899365,
+    "n_entries_removed": 560,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.5,
+    "policy": "uniform_local",
+    "kl": 0.018445466393844034,
+    "n_entries_removed": 560,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.5,
+    "policy": "allocated_mass",
+    "kl": 0.016198608920243017,
+    "n_entries_removed": 552,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.5,
+    "policy": "allocated_local",
+    "kl": 0.01723672318104169,
+    "n_entries_removed": 552,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 0,
+    "q_global": 0.5,
+    "policy": "uniform_random",
+    "kl": 0.01745233269825569,
+    "kl_std": 0.0060057442076742315,
+    "n_entries_removed": 560.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          9,
+          6
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          11,
+          0
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          6
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.1,
+    "policy": "uniform_mass",
+    "kl": 0.0037592939504549616,
+    "n_entries_removed": 80,
+    "skipped_strata": [
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.1,
+    "policy": "uniform_local",
+    "kl": 0.0037038662999955233,
+    "n_entries_removed": 80,
+    "skipped_strata": [
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.1,
+    "policy": "allocated_mass",
+    "kl": 0.0037592939504549616,
+    "n_entries_removed": 80,
+    "skipped_strata": [
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.1,
+    "policy": "allocated_local",
+    "kl": 0.0037038662999955233,
+    "n_entries_removed": 80,
+    "skipped_strata": [
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.1,
+    "policy": "uniform_random",
+    "kl": 0.0042964659259556014,
+    "kl_std": 0.001715525161001609,
+    "n_entries_removed": 80.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.2,
+    "policy": "uniform_mass",
+    "kl": 0.003210471946170898,
+    "n_entries_removed": 160,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.2,
+    "policy": "uniform_local",
+    "kl": 0.0029921782664418953,
+    "n_entries_removed": 160,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.2,
+    "policy": "allocated_mass",
+    "kl": 0.003210471946170898,
+    "n_entries_removed": 160,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.2,
+    "policy": "allocated_local",
+    "kl": 0.0029921782664418953,
+    "n_entries_removed": 160,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.2,
+    "policy": "uniform_random",
+    "kl": 0.005303953574542902,
+    "kl_std": 0.00034508855579146023,
+    "n_entries_removed": 160.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.3,
+    "policy": "uniform_mass",
+    "kl": 0.00436861815887858,
+    "n_entries_removed": 240,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.3,
+    "policy": "uniform_local",
+    "kl": 0.007372657808898699,
+    "n_entries_removed": 240,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.3,
+    "policy": "allocated_mass",
+    "kl": 0.004369526330943329,
+    "n_entries_removed": 244,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.3,
+    "policy": "allocated_local",
+    "kl": 0.007370148576358648,
+    "n_entries_removed": 244,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.3,
+    "policy": "uniform_random",
+    "kl": 0.006268719445033481,
+    "kl_std": 0.0014667254119345894,
+    "n_entries_removed": 240.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          3
+        ]
+      ],
+      [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.4,
+    "policy": "uniform_mass",
+    "kl": 0.00560533084122763,
+    "n_entries_removed": 320,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.4,
+    "policy": "uniform_local",
+    "kl": 0.007426753166013584,
+    "n_entries_removed": 320,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.4,
+    "policy": "allocated_mass",
+    "kl": 0.005826048188190044,
+    "n_entries_removed": 330,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.4,
+    "policy": "allocated_local",
+    "kl": 0.007493182373848151,
+    "n_entries_removed": 330,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.4,
+    "policy": "uniform_random",
+    "kl": 0.00844271879607344,
+    "kl_std": 0.0021020212492863246,
+    "n_entries_removed": 320.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          3
+        ]
+      ],
+      [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.5,
+    "policy": "uniform_mass",
+    "kl": 0.012968721507077447,
+    "n_entries_removed": 400,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.5,
+    "policy": "uniform_local",
+    "kl": 0.0116155467427157,
+    "n_entries_removed": 400,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.5,
+    "policy": "allocated_mass",
+    "kl": 0.01113687892363592,
+    "n_entries_removed": 413,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.5,
+    "policy": "allocated_local",
+    "kl": 0.011070123503547483,
+    "n_entries_removed": 413,
+    "skipped_strata": [
+      [
+        11,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 1,
+    "q_global": 0.5,
+    "policy": "uniform_random",
+    "kl": 0.01393315804662011,
+    "kl_std": 0.0031103447099210062,
+    "n_entries_removed": 400.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          9
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.1,
+    "policy": "uniform_mass",
+    "kl": 0.005059308846322623,
+    "n_entries_removed": 80,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.1,
+    "policy": "uniform_local",
+    "kl": 0.004947322699045368,
+    "n_entries_removed": 80,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.1,
+    "policy": "allocated_mass",
+    "kl": 0.005163738744629746,
+    "n_entries_removed": 77,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.1,
+    "policy": "allocated_local",
+    "kl": 0.0048239421246678,
+    "n_entries_removed": 77,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.1,
+    "policy": "uniform_random",
+    "kl": 0.005003721587908781,
+    "kl_std": 0.005164744653019873,
+    "n_entries_removed": 80.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.2,
+    "policy": "uniform_mass",
+    "kl": 0.010939790217376528,
+    "n_entries_removed": 140,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.2,
+    "policy": "uniform_local",
+    "kl": 0.012426884744199302,
+    "n_entries_removed": 140,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.2,
+    "policy": "allocated_mass",
+    "kl": 0.010939790217376528,
+    "n_entries_removed": 140,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.2,
+    "policy": "allocated_local",
+    "kl": 0.012426884744199302,
+    "n_entries_removed": 140,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.2,
+    "policy": "uniform_random",
+    "kl": 0.01121028636792198,
+    "kl_std": 0.009400948919051516,
+    "n_entries_removed": 140.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.3,
+    "policy": "uniform_mass",
+    "kl": 0.010538506245836337,
+    "n_entries_removed": 220,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.3,
+    "policy": "uniform_local",
+    "kl": 0.015564078676818204,
+    "n_entries_removed": 220,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.3,
+    "policy": "allocated_mass",
+    "kl": 0.010452632449668245,
+    "n_entries_removed": 217,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.3,
+    "policy": "allocated_local",
+    "kl": 0.016420315930501885,
+    "n_entries_removed": 217,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.3,
+    "policy": "uniform_random",
+    "kl": 0.016973717927773673,
+    "kl_std": 0.010567382409609926,
+    "n_entries_removed": 220.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          6
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.4,
+    "policy": "uniform_mass",
+    "kl": 0.01650193968871195,
+    "n_entries_removed": 280,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.4,
+    "policy": "uniform_local",
+    "kl": 0.014960426768173699,
+    "n_entries_removed": 280,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.4,
+    "policy": "allocated_mass",
+    "kl": 0.01683803398843774,
+    "n_entries_removed": 290,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.4,
+    "policy": "allocated_local",
+    "kl": 0.015670720712990378,
+    "n_entries_removed": 290,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.4,
+    "policy": "uniform_random",
+    "kl": 0.021331763843376563,
+    "kl_std": 0.01453910312912857,
+    "n_entries_removed": 280.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          6
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          6
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.5,
+    "policy": "uniform_mass",
+    "kl": 0.016334536878850763,
+    "n_entries_removed": 360,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.5,
+    "policy": "uniform_local",
+    "kl": 0.020807606187031844,
+    "n_entries_removed": 360,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.5,
+    "policy": "allocated_mass",
+    "kl": 0.016101706842358322,
+    "n_entries_removed": 357,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.5,
+    "policy": "allocated_local",
+    "kl": 0.0211018173102563,
+    "n_entries_removed": 357,
+    "skipped_strata": [
+      [
+        11,
+        6
+      ],
+      [
+        11,
+        9
+      ]
+    ]
+  },
+  {
+    "prompt": 2,
+    "q_global": 0.5,
+    "policy": "uniform_random",
+    "kl": 0.02856969458677666,
+    "kl_std": 0.014647672939000812,
+    "n_entries_removed": 360.0,
+    "n_seeds": 3,
+    "skipped_strata": [
+      [
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          6
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ],
+      [
+        [
+          9,
+          6
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ]
+      ]
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+model_id: EleutherAI/pythia-160m
+dtype: float32
+attn_implementation: eager
+seed: 0

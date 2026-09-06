@@ -1,0 +1,14 @@
+{
+  "model_id": "EleutherAI/pythia-160m",
+  "torch_version": "2.14.0",
+  "prompt_tokens": 57,
+  "A0_baseline_finite": true,
+  "A_qkv_reconstruction_rel_err": 6.988041948040458e-08,
+  "B_delete_renormalize_identity_abs_err": 1.1102230246251565e-16,
+  "C_determinism_abs_err": 0.0,
+  "D_tier_a_kl_finite": true,
+  "D_tier_a_kl": 1.0947799504016744e-07,
+  "D_tier_b_kl_finite": true,
+  "D_tier_b_kl": 0.0006562071079251266,
+  "verdict": "ENGINEERING VERIFIED"
+}
