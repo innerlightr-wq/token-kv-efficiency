@@ -104,3 +104,8 @@ made that `d_B^local` predicts downstream damage universally.
 .venv/bin/python experiments/multistratum_eviction.py
 .venv/bin/python experiments/global_budget_curve.py
 ```
+
+## License
+
+The software in this repository is released under the MIT License. See
+[`LICENSE`](LICENSE).
