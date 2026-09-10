@@ -1,0 +1,131 @@
+CROSS-ARCHITECTURE DVG REPLICATION: GPT-2 FULL GRID vs FROZEN PYTHIA DVG-B
+====================================================================================================
+
+n_measurable: GPT-2=22477  Pythia=1962  ratio=11.46x
+forward passes: 3   max reconstruction err: 0.000e+00
+target definition (identical to Pythia): win_local = 1 iff advantage_mass_minus_local_at_change = kl_mass - kl_local > 0 (local-damage wins); 0 otherwise (mass wins). IDENTICAL to the Pythia DVG experiment's definition -- not redefined.
+
+----------------------------------------------------------------------------------------------------
+PART IV -- CROSS-ARCHITECTURE REPLICATION TABLE
+----------------------------------------------------------------------------------------------------
+feature              Py pooled rho  GPT2 pooled rho  Py within r  GPT2 within r  classification
+cos_vi_vj                  -0.1323         -0.04616     -0.04674      -0.007074  directionally consistent but weak
+cos_vi_o                   -0.1754         -0.03673      0.03856         0.0117  directionally consistent but weak
+cos_vj_o                   -0.1518          0.04436      0.03616        0.01729  CONTRADICTED (sign flip)
+delta_cos_o               -0.06638         -0.07805     0.002135      -0.001793  directionally consistent but weak
+cos_oi_oj                 -0.09001         -0.01612     -0.05843       -0.02407  architecture-sensitive (near-null both, not comparable)
+cos_vidiff_o               -0.1384         -0.08609     0.007615       0.001988  directionally consistent but weak
+cos_vidiff_rpair           0.03555          0.04941      -0.0179       -0.01422  directionally consistent but weak
+norm_ratio                 0.06191         -0.04896      0.01377      -0.004561  CONTRADICTED (sign flip)
+
+Note: statistical significance alone is NOT used for this classification (n differs by
+~10x, so p-values are not comparable across columns) -- classification uses sign agreement
+and the pre-declared |within-stratum r| >= 0.1 effect-size threshold only.
+
+----------------------------------------------------------------------------------------------------
+PART III -- POOLED vs WITHIN-STRATUM (GPT-2), full detail
+----------------------------------------------------------------------------------------------------
+feature               pooled AUC pooled weak?  within r  within p eta^2(strat)  depth-resid r
+cos_vi_vj                  0.478          yes -0.007074    0.2889       0.3271         0.0685
+cos_vi_o                  0.4853          yes    0.0117   0.07939       0.5149        0.05381
+cos_vj_o                  0.5104          yes   0.01729  0.009521       0.5988        0.06709
+delta_cos_o               0.4736          yes -0.001793    0.7881       0.3526      -0.004587
+cos_oi_oj                 0.4975          yes  -0.02407 0.0003082       0.2163         0.0231
+cos_vidiff_o              0.4697          yes  0.001988    0.7657       0.4045       -0.01759
+cos_vidiff_rpair          0.5207          yes  -0.01422   0.03298       0.3433      -0.009866
+norm_ratio                0.4807          yes -0.004561    0.4942       0.4752       -0.03288
+
+depth-resid r: within-stratum-style correlation AFTER regressing BOTH feature and advantage
+on depth_fraction first (simple OLS) -- tests whether GPT-2's known depth-dependence of winner
+direction (winrate_vs_depth rho=-0.191, p<0.0001, from the full-grid report) could by itself
+manufacture an apparent pooled DVG signal. Compare to the plain within-stratum column.
+
+----------------------------------------------------------------------------------------------------
+PART V -- SAMPLE-SIZE / POWER CLASSIFICATION
+----------------------------------------------------------------------------------------------------
+1_near_zero_despite_power: pooled AUC within 0.02 of 0.5 even at ~10x Pythia's n -> evidence
+    AGAINST simple directional geometry for that feature, not merely 'no significant result'.
+2_tiny_significant_still_negligible: statistically detectable but below the practical-weakness
+    threshold -> still DVG-B territory for that feature.
+3_reproducible_within_stratum: within-stratum |r|>=0.10 -> possible DVG-C signal.
+4_strong_predictive_improvement: within-stratum signal AND beats |Gamma| in grouped CV -> DVG-D.
+
+  cos_vi_vj            Pythia AUC=0.4708  GPT-2 AUC=0.478  GPT-2 within-r=-0.007074  -> 2_tiny_significant_still_negligible
+  cos_vi_o             Pythia AUC=0.4377  GPT-2 AUC=0.4853  GPT-2 within-r=0.0117  -> 1_near_zero_despite_power
+  cos_vj_o             Pythia AUC=0.4245  GPT-2 AUC=0.5104  GPT-2 within-r=0.01729  -> 1_near_zero_despite_power
+  delta_cos_o          Pythia AUC=0.4926  GPT-2 AUC=0.4736  GPT-2 within-r=-0.001793  -> 2_tiny_significant_still_negligible
+  cos_oi_oj            Pythia AUC=0.4837  GPT-2 AUC=0.4975  GPT-2 within-r=-0.02407  -> 1_near_zero_despite_power
+  cos_vidiff_o         Pythia AUC=0.4496  GPT-2 AUC=0.4697  GPT-2 within-r=0.001988  -> 2_tiny_significant_still_negligible
+  cos_vidiff_rpair     Pythia AUC=0.4928  GPT-2 AUC=0.5207  GPT-2 within-r=-0.01422  -> 2_tiny_significant_still_negligible
+  norm_ratio           Pythia AUC=0.4972  GPT-2 AUC=0.4807  GPT-2 within-r=-0.004561  -> 1_near_zero_despite_power
+
+----------------------------------------------------------------------------------------------------
+PART VI -- STRATUM CONTROLS
+----------------------------------------------------------------------------------------------------
+  cos_vi_vj            n_strata=410  median_AUC=0.4877  IQR=[0.39906549354435655, 0.59024064171123]  frac_same_sign_as_pooled=0.5195
+  cos_vi_o             n_strata=410  median_AUC=0.4913  IQR=[0.3712905776907434, 0.6132944915254237]  frac_same_sign_as_pooled=0.4756
+  cos_vj_o             n_strata=410  median_AUC=0.488  IQR=[0.36201388888888886, 0.6278506225113971]  frac_same_sign_as_pooled=0.5098
+  delta_cos_o          n_strata=410  median_AUC=0.497  IQR=[0.36547619047619045, 0.6]  frac_same_sign_as_pooled=0.4976
+  cos_oi_oj            n_strata=410  median_AUC=0.4925  IQR=[0.4055178889737713, 0.5973535247432307]  frac_same_sign_as_pooled=0.5098
+  cos_vidiff_o         n_strata=410  median_AUC=0.4937  IQR=[0.3745600414078675, 0.601048951048951]  frac_same_sign_as_pooled=0.4732
+  cos_vidiff_rpair     n_strata=410  median_AUC=0.5024  IQR=[0.4000268528464017, 0.6225640928898867]  frac_same_sign_as_pooled=0.4829
+  norm_ratio           n_strata=410  median_AUC=0.5037  IQR=[0.3959096459096459, 0.625]  frac_same_sign_as_pooled=0.4756
+
+Interpretation: frac_same_sign_as_pooled near 0.5 means the feature's per-stratum direction is
+essentially a coin flip across strata (sign changes freely) -- inconsistent with a single global
+mechanism regardless of the pooled AUC.
+
+----------------------------------------------------------------------------------------------------
+PART VII -- TAIL AUDIT (20 largest |advantage| pairs, including the ~1.56-nat extreme case)
+----------------------------------------------------------------------------------------------------
+Most extreme pair: prompt=0 layer=1 head=2 (i=37,j=39)  advantage=-0.7233  Gamma=0.0302
+    cos_vi_vj            = 0.9489
+    cos_vi_o             = 0.9383
+    cos_vj_o             = 0.9562
+    delta_cos_o          = -0.0179
+    cos_oi_oj            = 0.5189
+    cos_vidiff_o         = -0.0312
+    cos_vidiff_rpair     = 0.1634
+    norm_ratio           = 1.0084
+
+Descriptive only (n=20, not enough for inference): does any feature separate the 10
+mass-favoring-tail pairs from the 10 local-favoring-tail pairs by eye/Mann-Whitney?
+    cos_vi_vj            tail Mann-Whitney AUC=0.16  p=0.01133
+    cos_vi_o             tail Mann-Whitney AUC=0.305  p=0.1483
+    cos_vj_o             tail Mann-Whitney AUC=0.25  p=0.06292
+    delta_cos_o          tail Mann-Whitney AUC=0.67  p=0.2123
+    cos_oi_oj            tail Mann-Whitney AUC=0.43  p=0.6232
+    cos_vidiff_o         tail Mann-Whitney AUC=0.8  p=0.02575
+    cos_vidiff_rpair     tail Mann-Whitney AUC=0.3  p=0.1405
+    norm_ratio           tail Mann-Whitney AUC=0.8  p=0.02575
+
+----------------------------------------------------------------------------------------------------
+PART VIII -- MINIMAL MULTIVARIATE MODEL (identical procedure to Pythia)
+----------------------------------------------------------------------------------------------------
+Chosen features (same selection rule): ['cos_vidiff_o', 'cos_vi_vj', 'cos_vidiff_rpair']
+model                          mean CV AUC   mean CV acc  folds used
+majority class                       0.500        0.5734          --
+|Gamma| only                         0.486        0.5724           5
+concentration only                  0.5473        0.5693           5
+directional features                0.5171        0.5682           5
+directional+baselines               0.5393        0.5632           5
+
+----------------------------------------------------------------------------------------------------
+PART IX -- VERDICT
+----------------------------------------------------------------------------------------------------
+GPT-2 DVG verdict: DVG-A
+No tested directional feature carries useful information about the downstream winner, pooled or within-stratum.
+
+Cross-architecture DVG conclusion: simple directional geometry rejected as a general explanation
+  (4/8 features near-zero despite ~10x power; 0/8 features show a within-stratum-meaningful effect)
+
+----------------------------------------------------------------------------------------------------
+PART X -- FALSIFICATION STATEMENT
+----------------------------------------------------------------------------------------------------
+GPT-2's ~10x larger sample did NOT rescue Pythia's DVG-B result into DVG-C: pooled effects
+remain small (several statistically significant only because of the huge n, per Part V's
+power classification), and NO feature reaches the pre-declared within-stratum effect-size
+threshold. This is POSITIVE EVIDENCE AGAINST the current simple directional-geometry
+hypothesis (the 8 cosine/ratio features tested), not merely an absence of significance --
+the experiment had the power to detect a real within-stratum effect of the pre-declared
+minimum size and did not find one.

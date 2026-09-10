@@ -1,0 +1,22 @@
+{
+  "row_sum_max_dev": 3.276112607863979e-07,
+  "causal_leak_max": 0.0,
+  "qk_recompute_max_abs_err": 3.271342153277068e-07,
+  "cproj_recon_max_rel_err": 1.972405577612631e-07,
+  "delete_renorm_max_abs_err": 2.842170943040401e-14,
+  "g_consistency_max_abs_err": 0.0,
+  "n_checks": {
+    "row_sum": 36,
+    "causal": 36,
+    "qk_recompute": 36,
+    "cproj_recon": 9,
+    "delete_renorm": 180
+  },
+  "tolerances": {
+    "row_sum": 1e-06,
+    "causal": 0.0,
+    "qk_recompute": 0.0001,
+    "cproj_recon_rel": 0.001,
+    "delete_renorm": 1e-08
+  }
+}

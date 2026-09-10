@@ -1,0 +1,89 @@
+CLUSTER-AWARE STATISTICAL REANALYSIS (LOCK-B correction)
+====================================================================================================
+seed=20260910  B=10000  n_cases=250
+
+----------------------------------------------------------------------------------------------------
+PART I -- VALIDATION (recomputed rates vs. stored report numbers)
+----------------------------------------------------------------------------------------------------
+  pooled_dph_flip_rate_recomputed: 0.324
+  pooled_dph_immediate_rate_recomputed: 0.432
+  pooled_dph_unresolved_rate_recomputed: 0.244
+  pooled_dph_multiple_flip_rate_recomputed: 0.096
+  pooled_flh_flip_rate_recomputed: 0.168
+  pooled_flh_immediate_rate_recomputed: 0.196
+  pooled_flh_unresolved_rate_recomputed: 0.636
+  expected_from_stored_reports: {'dph_flip_rate': 0.324, 'dph_immediate_consistent': 0.432, 'dph_unresolved_rate': 0.244, 'dph_multiple_flip_rate': 0.096, 'flh_flip_rate': 0.168, 'flh_immediate_consistent': 0.196, 'flh_unresolved_rate': 0.636}
+  index_alignment_mismatches: 0
+
+----------------------------------------------------------------------------------------------------
+PART II -- CLUSTER INVENTORY (primary unit = architecture x prompt x layer x head)
+----------------------------------------------------------------------------------------------------
+  primary_pooled: {'n_clusters': 155, 'min_size': 1, 'median_size': 1.0, 'max_size': 10, 'n_singleton_clusters': 105, 'frac_singleton_clusters': 0.6774193548387096}
+  primary_pythia: {'n_clusters': 34, 'min_size': 1, 'median_size': 2.0, 'max_size': 10, 'n_singleton_clusters': 9, 'frac_singleton_clusters': 0.2647058823529412}
+  primary_gpt2: {'n_clusters': 121, 'min_size': 1, 'median_size': 1.0, 'max_size': 3, 'n_singleton_clusters': 96, 'frac_singleton_clusters': 0.7933884297520661}
+  alt_layer_head: {'n_clusters': 94, 'min_size': 1, 'median_size': 2.0, 'max_size': 12, 'n_singleton_clusters': 40, 'frac_singleton_clusters': 0.425531914893617}
+  alt_arch_prompt: {'n_clusters': 6, 'min_size': 20, 'median_size': 34.0, 'max_size': 82, 'n_singleton_clusters': 0, 'frac_singleton_clusters': 0.0}
+
+----------------------------------------------------------------------------------------------------
+PART IV -- DPH CLUSTER-AWARE ESTIMATES
+----------------------------------------------------------------------------------------------------
+  [pooled]
+    flip_rate: observed=0.3240  boot_mean=0.3248  boot_se=0.0330  95% CI=(0.261, 0.3917)
+    immediate_consistent_rate: observed=0.4320  boot_mean=0.4313  boot_se=0.0323  95% CI=(0.3668, 0.4941)
+    unresolved_rate: observed=0.2440  boot_mean=0.2440  boot_se=0.0309  95% CI=(0.1856, 0.3065)
+    multiple_flip_rate: observed=0.0960  boot_mean=0.0966  boot_se=0.0210  95% CI=(0.0576, 0.1405)
+  [pythia]
+    flip_rate: observed=0.3800  boot_mean=0.3850  boot_se=0.0655  95% CI=(0.2637, 0.5222)
+    immediate_consistent_rate: observed=0.3800  boot_mean=0.3762  boot_se=0.0575  95% CI=(0.26, 0.4853)
+    unresolved_rate: observed=0.2400  boot_mean=0.2388  boot_se=0.0551  95% CI=(0.1364, 0.3516)
+  [gpt2]
+    flip_rate: observed=0.2867  boot_mean=0.2864  boot_se=0.0368  95% CI=(0.2158, 0.3595)
+    immediate_consistent_rate: observed=0.4667  boot_mean=0.4665  boot_se=0.0399  95% CI=(0.3878, 0.5443)
+    unresolved_rate: observed=0.2467  boot_mean=0.2471  boot_se=0.0363  95% CI=(0.1776, 0.3197)
+
+----------------------------------------------------------------------------------------------------
+PART VIII -- ARCHITECTURE DIFFERENCE (flip_rate, pythia - gpt2)
+----------------------------------------------------------------------------------------------------
+  observed=0.0933  boot_mean=0.0986  boot_se=0.0750  95% CI=(-0.0447, 0.2524)
+
+----------------------------------------------------------------------------------------------------
+PART V -- FLH CLUSTER-AWARE ESTIMATES (pooled)
+----------------------------------------------------------------------------------------------------
+    flip_rate: observed=0.1680  boot_mean=0.1686  boot_se=0.0313  95% CI=(0.1111, 0.2324)
+    immediate_consistent_rate: observed=0.1960  boot_mean=0.1963  boot_se=0.0288  95% CI=(0.1423, 0.2548)
+    unresolved_rate: observed=0.6360  boot_mean=0.6350  boot_se=0.0414  95% CI=(0.5498, 0.7143)
+
+----------------------------------------------------------------------------------------------------
+PART VI -- PAIRED DPH-vs-FLH DIFFERENCES (same resampled clusters/cases)
+----------------------------------------------------------------------------------------------------
+    flip_rate_FLH_minus_DPH: observed=-0.1560  boot_mean=-0.1562  boot_se=0.0378  95% CI=(-0.2311, -0.0823)
+    unresolved_rate_FLH_minus_DPH: observed=0.3920  boot_mean=0.3911  boot_se=0.0487  95% CI=(0.2939, 0.4847)
+
+----------------------------------------------------------------------------------------------------
+residual never_consistent cases resolved in functional space (paired subset)
+----------------------------------------------------------------------------------------------------
+  n_cases_in_subset=56  n_clusters_in_subset=50
+  observed=0.3571  boot_mean=0.3585  boot_se=0.0691  95% CI=(0.2281, 0.5)
+
+----------------------------------------------------------------------------------------------------
+PART VII -- LOCAL-vs-MASS SUBGROUP (DPH)
+----------------------------------------------------------------------------------------------------
+  [local_final_winner] n_cases=126 n_clusters=89
+    flip_rate: observed=0.2063  boot_mean=0.2062  boot_se=0.0366  95% CI=(0.1367, 0.2794)
+    immediate_consistent_rate: observed=0.6190  boot_mean=0.6179  boot_se=0.0489  95% CI=(0.5191, 0.7109)
+  [mass_final_winner] n_cases=124 n_clusters=93
+    flip_rate: observed=0.4435  boot_mean=0.4449  boot_se=0.0502  95% CI=(0.3474, 0.5431)
+    immediate_consistent_rate: observed=0.2419  boot_mean=0.2425  boot_se=0.0385  95% CI=(0.1695, 0.32)
+
+----------------------------------------------------------------------------------------------------
+PART IX -- SENSITIVITY TO CLUSTER DEFINITION (DPH pooled, unstratified bootstrap)
+----------------------------------------------------------------------------------------------------
+  [primary_arch_prompt_layer_head]
+    flip_rate: observed=0.3240  boot_mean=0.3237  boot_se=0.0332  95% CI=(0.2594, 0.3878)
+    unresolved_rate: observed=0.2440  boot_mean=0.2436  boot_se=0.0311  95% CI=(0.1853, 0.3065)
+  [alt_layer_head_collapses_arch_and_prompt]
+    flip_rate: observed=0.3240  boot_mean=0.3233  boot_se=0.0346  95% CI=(0.2542, 0.39)
+    unresolved_rate: observed=0.2440  boot_mean=0.2432  boot_se=0.0327  95% CI=(0.1818, 0.3092)
+  [alt_arch_prompt_collapses_layer_and_head]
+    flip_rate: observed=0.3240  boot_mean=0.3286  boot_se=0.0421  95% CI=(0.2679, 0.4368)
+    unresolved_rate: observed=0.2440  boot_mean=0.2451  boot_se=0.0198  95% CI=(0.2085, 0.2844)

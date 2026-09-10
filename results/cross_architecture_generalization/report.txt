@@ -1,0 +1,111 @@
+CROSS-ARCHITECTURE GENERALIZATION PILOT -- GPT-2 (124M) vs Pythia-160M
+==============================================================================
+model=gpt2  layers=[0, 6, 11]  heads=[0, 3, 6, 9]  n_prompts=3  n_layer_head_combos=12  n_prompt_layer_head_cells=36
+
+------------------------------------------------------------------------------
+ADAPTER VALIDATION
+------------------------------------------------------------------------------
+  row_sum_max_dev                 : 3.276e-07
+  causal_leak_max                 : 0.000e+00
+  qk_recompute_max_abs_err        : 3.271e-07
+  cproj_recon_max_rel_err         : 1.972e-07
+  delete_renorm_max_abs_err       : 2.842e-14
+  g_consistency_max_abs_err       : 0.000e+00
+  checks run: {'row_sum': 36, 'causal': 36, 'qk_recompute': 36, 'cproj_recon': 9, 'delete_renorm': 180}
+
+------------------------------------------------------------------------------
+GAMMA IMPLEMENTATION SANITY CHECK (architecture-independent identity)
+------------------------------------------------------------------------------
+  n_verification_checks=35568  n_mismatches=0
+
+------------------------------------------------------------------------------
+G1-G7
+------------------------------------------------------------------------------
+G1 inversions occur: True  (n=2354 of 35568 pairs)
+G2 prevalence: GPT-2=6.6183%  Pythia=3.5501%
+G3 set-change rate: 0.9974511469838573  (Pythia 0.996)
+G4 measurable-KL rate: 0.9846678023850085  (Pythia 0.991)
+G5 local wins=1428 mass wins=884 rate=0.6176470588235294  (Pythia 0.563)
+   sum advantage=0.7428219004826787  median=3.3050450972915116e-06
+G6 top1_share vs prevalence: {'rho': -0.5016089628372666, 'p': 0.0018287104851293758}  (Pythia rho=-0.650)
+   entropy vs prevalence: {'rho': 0.5909383495986377, 'p': 0.0001478249866062021}  (Pythia rho=+0.759)
+G7 |Gamma| vs |advantage|: {'rho': 0.03228207719895083, 'p': 0.11785508091438175}  (Pythia rho=+0.159)
+   |Gamma| vs signed advantage: {'rho': 0.01840314528212222, 'p': 0.37274331800036997}  (Pythia rho=+0.015)
+
+------------------------------------------------------------------------------
+PER-STRATUM HETEROGENEITY
+------------------------------------------------------------------------------
+(prompt,layer,head) cells with zero inversions: 0 / 36
+top-5 highest inversion-prevalence strata:
+    prompt=2 layer=0 head=9  frac=0.3587  n_inv=226  top1=0.063
+    prompt=1 layer=0 head=9  frac=0.2315  n_inv=209  top1=0.058
+    prompt=0 layer=0 head=9  frac=0.1901  n_inv=272  top1=0.050
+    prompt=1 layer=11 head=0  frac=0.1650  n_inv=149  top1=0.238
+    prompt=0 layer=11 head=0  frac=0.1405  n_inv=201  top1=0.236
+strongly mass-favoring strata (>=70% mass wins, n>=5 measurable): 4
+    prompt=1 layer=6 head=0  mass_win_rate=0.786  n=14
+    prompt=2 layer=0 head=0  mass_win_rate=0.816  n=49
+    prompt=2 layer=6 head=9  mass_win_rate=0.909  n=11
+    prompt=2 layer=11 head=0  mass_win_rate=0.920  n=87
+strongly local-favoring strata (>=70% local wins, n>=5 measurable): 12
+    prompt=0 layer=0 head=3  local_win_rate=0.833  n=6
+    prompt=0 layer=0 head=6  local_win_rate=0.809  n=47
+    prompt=0 layer=6 head=3  local_win_rate=0.741  n=54
+    prompt=0 layer=6 head=6  local_win_rate=0.854  n=82
+    prompt=0 layer=11 head=3  local_win_rate=0.756  n=45
+    prompt=1 layer=0 head=3  local_win_rate=0.900  n=10
+    prompt=1 layer=0 head=9  local_win_rate=0.794  n=209
+    prompt=1 layer=6 head=6  local_win_rate=0.962  n=53
+    prompt=1 layer=11 head=3  local_win_rate=1.000  n=58
+    prompt=2 layer=0 head=3  local_win_rate=1.000  n=9
+    prompt=2 layer=0 head=9  local_win_rate=1.000  n=225
+    prompt=2 layer=11 head=3  local_win_rate=0.760  n=25
+
+(prompt,layer,head) cells with >=1 inversion: 36 / 36
+(prompt,layer,head) cells with >=1 measurable KL pair: 36 / 36
+prompts with >=1 inversion: 3 / 3
+(layer,head) combos with >=1 inversion: 12 / 12
+
+------------------------------------------------------------------------------
+STRONGEST PAIR (largest |advantage|)
+------------------------------------------------------------------------------
+{
+  "prompt": 1,
+  "layer": 0,
+  "head": 0,
+  "i": 29,
+  "j": 21,
+  "alpha_lo": 0.037772233807299715,
+  "alpha_hi": 0.04007425105323939,
+  "g_lo": 7.194423918052836,
+  "g_hi": 5.620262716937222,
+  "M": 1.0634889672041918,
+  "G": 1.2800867646937077,
+  "Gamma": 0.18537287899086058,
+  "d_lo": 0.28241698264098863,
+  "d_hi": 0.2346304590233418,
+  "n_candidates": 43,
+  "k_max": 41,
+  "change_k": 35,
+  "q_at_change": 0.813953488372093,
+  "changes_set_within_kmax": true,
+  "kl_mass_at_change": 0.222886848917702,
+  "kl_local_at_change": 0.32974099681351365,
+  "advantage_mass_minus_local_at_change": -0.10685414789581166,
+  "above_noise_floor": true
+}
+
+------------------------------------------------------------------------------
+FULL-GRID EXPANSION DECISION GATE
+------------------------------------------------------------------------------
+  multiple_independent_strata: True
+  no_adapter_concerns: True
+  enough_measurable_cases: True
+  not_confined_to_one_prompt_or_head: True
+EXPANSION JUSTIFIED: True
+
+------------------------------------------------------------------------------
+VERDICT
+------------------------------------------------------------------------------
+CAG-D
+Strong cross-architecture replication: prevalence, set-change rate, KL-measurability, and the concentration relationship all match Pythia qualitatively and are numerically close.

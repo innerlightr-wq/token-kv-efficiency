@@ -22,3 +22,12 @@ __pycache__/
 *.pkl
 *.parquet
 *.h5
+
+# LaTeX build scratch (tectonic writes here; canonical PDF lives at
+# manuscript/token_kv_eviction.pdf, committed separately)
+manuscript/build/
+*.aux
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz

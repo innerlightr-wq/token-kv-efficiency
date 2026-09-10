@@ -1,0 +1,96 @@
+FUNCTIONAL-LATENT HYPOTHESIS (FLH) AUDIT
+====================================================================================================
+
+reused exactly, no new draw (see results/downstream_propagation_sample, seed 20260910)
+TOL_DELTA_KL = 1.0e-04 (revised from the initial 1e-8 reuse of NOISE_FLOOR_KL after
+  this script's own Part VIII validation caught up to 2.2e-5 logit-lens reconstruction noise -- see
+  the module docstring/comment above TOL_DELTA_KL for the full diagnosis.)
+KL convention: kl_divergence(logits_full, logits_compressed) = KL(p_full || p_compressed); Delta_KL_l = KL_mass(l) - KL_local(l); positive => local functionally closer to reference at layer l.
+
+----------------------------------------------------------------------------------------------------
+PART VIII -- NUMERICAL VALIDATION (final-layer logit-lens vs. true final logits)
+----------------------------------------------------------------------------------------------------
+max |final-layer logit-lens KL - true final KL|, mass side: 1.545e-05
+max |final-layer logit-lens KL - true final KL|, local side: 2.205e-05
+max |recomputed advantage - DPH-sample-stored advantage|: 0.000e+00
+final-layer sign(Delta_KL) agrees with true final winner: 60/60 (1)
+All within the pre-declared validation tolerance (1.0e-04). Proceeding.
+
+----------------------------------------------------------------------------------------------------
+PRIMARY FUNCTIONAL STATISTICS BY ARCHITECTURE
+----------------------------------------------------------------------------------------------------
+[pythia] n=100
+  functional flip_rate            = 0.19  95% CI (0.1251, 0.2778)
+  functional immediate_consistent = 0.08  95% CI (0.04109, 0.15)
+  functional never/unresolved     = 0.73  95% CI (0.6357, 0.8073)
+  median functional emergence frac= 0.6182
+  category_counts = {'immediate_consistent': 8, 'single_flip': 3, 'multiple_flip': 16, 'never_consistent': 7, 'unresolved': 66}
+
+[gpt2] n=150
+  functional flip_rate            = 0.1533  95% CI (0.1044, 0.2196)
+  functional immediate_consistent = 0.2733  95% CI (0.2083, 0.3496)
+  functional never/unresolved     = 0.5733  95% CI (0.4933, 0.6497)
+  median functional emergence frac= 0.2929
+  category_counts = {'immediate_consistent': 41, 'single_flip': 12, 'multiple_flip': 11, 'never_consistent': 8, 'unresolved': 78}
+
+[pooled] n=250
+  functional flip_rate            = 0.168  95% CI (0.1268, 0.2193)
+  functional immediate_consistent = 0.196  95% CI (0.1515, 0.2497)
+  functional never/unresolved     = 0.636  95% CI (0.5747, 0.6932)
+  median functional emergence frac= 0.3875
+  category_counts = {'immediate_consistent': 49, 'single_flip': 15, 'multiple_flip': 27, 'never_consistent': 15, 'unresolved': 144}
+
+----------------------------------------------------------------------------------------------------
+RESIDUAL vs. FUNCTIONAL CROSS-TABULATION (Part VI)
+----------------------------------------------------------------------------------------------------
+  both_succeed                          : 71
+  residual_fails_functional_succeeds    : 20
+  residual_succeeds_functional_fails    : 118
+  both_fail                             : 41
+
+----------------------------------------------------------------------------------------------------
+CENTRAL STATISTIC: residual never_consistent cases resolved in functional/KL space
+----------------------------------------------------------------------------------------------------
+  [pythia] n=19  resolved=5  frac=0.2632
+  [gpt2] n=37  resolved=15  frac=0.4054
+  [pooled] n=56  resolved=20  frac=0.3571
+
+----------------------------------------------------------------------------------------------------
+LOCAL-WIN vs MASS-WIN, FUNCTIONAL SPACE (Part VII)
+----------------------------------------------------------------------------------------------------
+[pythia]
+  local  n=51   functional_flip_rate=0.1569 functional_immediate=0.1176 median_emergence_frac=0.6182
+  mass   n=49   functional_flip_rate=0.2245 functional_immediate=0.04082 median_emergence_frac=0.5909
+[gpt2]
+  local  n=75   functional_flip_rate=0.12 functional_immediate=0.3333 median_emergence_frac=0.1181
+  mass   n=75   functional_flip_rate=0.1867 functional_immediate=0.2133 median_emergence_frac=0.5
+[pooled]
+  local  n=126  functional_flip_rate=0.1349 functional_immediate=0.246 median_emergence_frac=0.25
+  mass   n=124  functional_flip_rate=0.2016 functional_immediate=0.1452 median_emergence_frac=0.5227
+
+----------------------------------------------------------------------------------------------------
+PART IX -- residual-vs-logit perturbation-norm relationship in never_consistent cases (descriptive)
+----------------------------------------------------------------------------------------------------
+{'rho': 0.9025874149776125, 'p': 2.0483658292431304e-21, 'n': 56}
+(Tested only as a simple consequence check -- not a new feature search. A weak/absent correlation would
+ be consistent with residual perturbations landing partly in functionally weak directions; this is
+ reported as a numerical observation only, not asserted as the mechanism.)
+
+----------------------------------------------------------------------------------------------------
+STRONGEST NATURALLY SAMPLED EXAMPLE (largest |advantage| rescued: residual never_consistent, functional succeeds)
+----------------------------------------------------------------------------------------------------
+[pythia] prompt=1 layer=0 head=3 i=40 j=35
+  advantage=7.2964e-03  final_winner=local
+  residual_category=never_consistent  functional_category=multiple_flip  functional_emergence_layer=11
+
+----------------------------------------------------------------------------------------------------
+STRONGEST COUNTEREXAMPLE (both residual and functional fail to resolve, largest |advantage|)
+----------------------------------------------------------------------------------------------------
+[gpt2] prompt=1 layer=0 head=3 i=23 j=24
+  advantage=9.7509e-05  final_winner=local
+  residual_category=never_consistent  functional_category=never_consistent
+
+----------------------------------------------------------------------------------------------------
+VERDICT
+----------------------------------------------------------------------------------------------------
+FLH-B

@@ -1,0 +1,373 @@
+{
+  "config": {
+    "seed": 20260910,
+    "n_bootstrap": 10000,
+    "n_cases": 250
+  },
+  "validation": {
+    "pooled_dph_flip_rate_recomputed": 0.324,
+    "pooled_dph_immediate_rate_recomputed": 0.432,
+    "pooled_dph_unresolved_rate_recomputed": 0.244,
+    "pooled_dph_multiple_flip_rate_recomputed": 0.096,
+    "pooled_flh_flip_rate_recomputed": 0.168,
+    "pooled_flh_immediate_rate_recomputed": 0.196,
+    "pooled_flh_unresolved_rate_recomputed": 0.636,
+    "expected_from_stored_reports": {
+      "dph_flip_rate": 0.324,
+      "dph_immediate_consistent": 0.432,
+      "dph_unresolved_rate": 0.244,
+      "dph_multiple_flip_rate": 0.096,
+      "flh_flip_rate": 0.168,
+      "flh_immediate_consistent": 0.196,
+      "flh_unresolved_rate": 0.636
+    },
+    "index_alignment_mismatches": 0
+  },
+  "clusters": {
+    "primary_pooled": {
+      "n_clusters": 155,
+      "min_size": 1,
+      "median_size": 1.0,
+      "max_size": 10,
+      "n_singleton_clusters": 105,
+      "frac_singleton_clusters": 0.6774193548387096
+    },
+    "primary_pythia": {
+      "n_clusters": 34,
+      "min_size": 1,
+      "median_size": 2.0,
+      "max_size": 10,
+      "n_singleton_clusters": 9,
+      "frac_singleton_clusters": 0.2647058823529412
+    },
+    "primary_gpt2": {
+      "n_clusters": 121,
+      "min_size": 1,
+      "median_size": 1.0,
+      "max_size": 3,
+      "n_singleton_clusters": 96,
+      "frac_singleton_clusters": 0.7933884297520661
+    },
+    "alt_layer_head": {
+      "n_clusters": 94,
+      "min_size": 1,
+      "median_size": 2.0,
+      "max_size": 12,
+      "n_singleton_clusters": 40,
+      "frac_singleton_clusters": 0.425531914893617
+    },
+    "alt_arch_prompt": {
+      "n_clusters": 6,
+      "min_size": 20,
+      "median_size": 34.0,
+      "max_size": 82,
+      "n_singleton_clusters": 0,
+      "frac_singleton_clusters": 0.0
+    }
+  },
+  "dph_cluster_aware": {
+    "pooled": {
+      "flip_rate": {
+        "observed": 0.324,
+        "boot_mean": 0.32479835207355356,
+        "boot_se": 0.03299816727404592,
+        "ci95_pct": [
+          0.26104417670682734,
+          0.3917083607636603
+        ],
+        "n_boot_used": 10000
+      },
+      "immediate_consistent_rate": {
+        "observed": 0.432,
+        "boot_mean": 0.431250586151304,
+        "boot_se": 0.03230514535857266,
+        "ci95_pct": [
+          0.36679214929214926,
+          0.49407230876540337
+        ],
+        "n_boot_used": 10000
+      },
+      "unresolved_rate": {
+        "observed": 0.244,
+        "boot_mean": 0.24395106177514245,
+        "boot_se": 0.030931848113593476,
+        "ci95_pct": [
+          0.18560391814068286,
+          0.3064516129032258
+        ],
+        "n_boot_used": 10000
+      },
+      "multiple_flip_rate": {
+        "observed": 0.096,
+        "boot_mean": 0.09657637302915609,
+        "boot_se": 0.021039521386534414,
+        "ci95_pct": [
+          0.05761316872427984,
+          0.14049586776859505
+        ],
+        "n_boot_used": 10000
+      }
+    },
+    "pythia": {
+      "flip_rate": {
+        "observed": 0.38,
+        "boot_mean": 0.38502542691912545,
+        "boot_se": 0.06552136861780554,
+        "ci95_pct": [
+          0.26373376623376626,
+          0.5222222222222223
+        ],
+        "n_boot_used": 10000
+      },
+      "immediate_consistent_rate": {
+        "observed": 0.38,
+        "boot_mean": 0.37617842777783245,
+        "boot_se": 0.05752129640543348,
+        "ci95_pct": [
+          0.26,
+          0.48529768703597936
+        ],
+        "n_boot_used": 10000
+      },
+      "unresolved_rate": {
+        "observed": 0.24,
+        "boot_mean": 0.23879614530304216,
+        "boot_se": 0.055066921208793515,
+        "ci95_pct": [
+          0.13636363636363635,
+          0.3516483516483517
+        ],
+        "n_boot_used": 10000
+      }
+    },
+    "gpt2": {
+      "flip_rate": {
+        "observed": 0.2866666666666667,
+        "boot_mean": 0.28642222703731357,
+        "boot_se": 0.03675457355521967,
+        "ci95_pct": [
+          0.2158238115390041,
+          0.35948409851745566
+        ],
+        "n_boot_used": 10000
+      },
+      "immediate_consistent_rate": {
+        "observed": 0.4666666666666667,
+        "boot_mean": 0.46652042866046084,
+        "boot_se": 0.039854297018063436,
+        "ci95_pct": [
+          0.3877551020408163,
+          0.5443037974683544
+        ],
+        "n_boot_used": 10000
+      },
+      "unresolved_rate": {
+        "observed": 0.24666666666666667,
+        "boot_mean": 0.2470573443022257,
+        "boot_se": 0.03634601853771105,
+        "ci95_pct": [
+          0.17763157894736842,
+          0.3197278911564626
+        ],
+        "n_boot_used": 10000
+      }
+    }
+  },
+  "architecture_difference_flip_rate_pythia_minus_gpt2": {
+    "observed": 0.09333333333333332,
+    "boot_mean": 0.09860319988181189,
+    "boot_se": 0.07501168996081937,
+    "ci95_pct": [
+      -0.04472951470621843,
+      0.25243752203351155
+    ],
+    "n_boot_used": 10000
+  },
+  "flh_cluster_aware": {
+    "pooled": {
+      "flip_rate": {
+        "observed": 0.168,
+        "boot_mean": 0.16863897052762053,
+        "boot_se": 0.03128325901285708,
+        "ci95_pct": [
+          0.1111111111111111,
+          0.23236514522821577
+        ],
+        "n_boot_used": 10000
+      },
+      "immediate_consistent_rate": {
+        "observed": 0.196,
+        "boot_mean": 0.1963389937380476,
+        "boot_se": 0.028825732270904753,
+        "ci95_pct": [
+          0.14230731225296442,
+          0.2547546867889073
+        ],
+        "n_boot_used": 10000
+      },
+      "unresolved_rate": {
+        "observed": 0.636,
+        "boot_mean": 0.6350220357343318,
+        "boot_se": 0.04138266889497612,
+        "ci95_pct": [
+          0.5497835497835498,
+          0.7142986075296542
+        ],
+        "n_boot_used": 10000
+      }
+    }
+  },
+  "paired_dph_vs_flh_differences": {
+    "flip_rate_FLH_minus_DPH": {
+      "observed": -0.156,
+      "boot_mean": -0.15615938154593303,
+      "boot_se": 0.03780293885971137,
+      "ci95_pct": [
+        -0.23107569721115537,
+        -0.082303190636524
+      ],
+      "n_boot_used": 10000
+    },
+    "unresolved_rate_FLH_minus_DPH": {
+      "observed": 0.392,
+      "boot_mean": 0.39107097395918944,
+      "boot_se": 0.04873021580215462,
+      "ci95_pct": [
+        0.2938535834266517,
+        0.4847165738857962
+      ],
+      "n_boot_used": 10000
+    }
+  },
+  "residual_never_consistent_resolved_by_functional": {
+    "observed": 0.35714285714285715,
+    "boot_mean": 0.35846384329660513,
+    "boot_se": 0.06907643547632772,
+    "ci95_pct": [
+      0.22807017543859648,
+      0.5
+    ],
+    "n_boot_used": 10000,
+    "n_cases_in_subset": 56,
+    "n_clusters_in_subset": 50
+  },
+  "local_vs_mass_subgroup": {
+    "local_final_winner": {
+      "n_cases": 126,
+      "n_clusters": 89,
+      "flip_rate": {
+        "observed": 0.20634920634920634,
+        "boot_mean": 0.20621924065250818,
+        "boot_se": 0.03658044089157824,
+        "ci95_pct": [
+          0.1366906474820144,
+          0.27941176470588236
+        ],
+        "n_boot_used": 10000
+      },
+      "immediate_consistent_rate": {
+        "observed": 0.6190476190476191,
+        "boot_mean": 0.617881869956161,
+        "boot_se": 0.04892103877870256,
+        "ci95_pct": [
+          0.5190839694656488,
+          0.7109375
+        ],
+        "n_boot_used": 10000
+      }
+    },
+    "mass_final_winner": {
+      "n_cases": 124,
+      "n_clusters": 93,
+      "flip_rate": {
+        "observed": 0.4435483870967742,
+        "boot_mean": 0.4448878163730609,
+        "boot_se": 0.05015909136896495,
+        "ci95_pct": [
+          0.34744887239109123,
+          0.5431034482758621
+        ],
+        "n_boot_used": 10000
+      },
+      "immediate_consistent_rate": {
+        "observed": 0.24193548387096775,
+        "boot_mean": 0.24248148304206396,
+        "boot_se": 0.038519448226242925,
+        "ci95_pct": [
+          0.1694915254237288,
+          0.32
+        ],
+        "n_boot_used": 10000
+      }
+    }
+  },
+  "sensitivity_alternate_cluster_definitions": {
+    "primary_arch_prompt_layer_head": {
+      "note": "same as pooled primary result above, recomputed here as an UNSTRATIFIED single-pool cluster bootstrap (no architecture stratification) purely for a like-for-like comparison against the two alternates below.",
+      "flip_rate": {
+        "observed": 0.324,
+        "boot_mean": 0.32373186080158584,
+        "boot_se": 0.03324524556942048,
+        "ci95_pct": [
+          0.2594142259414226,
+          0.38775704198029015
+        ],
+        "n_boot_used": 10000
+      },
+      "unresolved_rate": {
+        "observed": 0.244,
+        "boot_mean": 0.24362277280607314,
+        "boot_se": 0.031080106924975225,
+        "ci95_pct": [
+          0.18532818532818532,
+          0.30645582780712594
+        ],
+        "n_boot_used": 10000
+      }
+    },
+    "alt_layer_head_collapses_arch_and_prompt": {
+      "flip_rate": {
+        "observed": 0.324,
+        "boot_mean": 0.3232756303006164,
+        "boot_se": 0.034582830328311547,
+        "ci95_pct": [
+          0.25423552259887006,
+          0.3900414937759336
+        ],
+        "n_boot_used": 10000
+      },
+      "unresolved_rate": {
+        "observed": 0.244,
+        "boot_mean": 0.2431614075731345,
+        "boot_se": 0.03271315846411695,
+        "ci95_pct": [
+          0.18181818181818182,
+          0.30921331400535235
+        ],
+        "n_boot_used": 10000
+      }
+    },
+    "alt_arch_prompt_collapses_layer_and_head": {
+      "flip_rate": {
+        "observed": 0.324,
+        "boot_mean": 0.3285946823705347,
+        "boot_se": 0.04207918378377035,
+        "ci95_pct": [
+          0.26785714285714285,
+          0.4368421052631579
+        ],
+        "n_boot_used": 10000
+      },
+      "unresolved_rate": {
+        "observed": 0.244,
+        "boot_mean": 0.24511842271529213,
+        "boot_se": 0.019750430993227173,
+        "ci95_pct": [
+          0.2084942084942085,
+          0.28440366972477066
+        ],
+        "n_boot_used": 10000
+      }
+    }
+  }
+}

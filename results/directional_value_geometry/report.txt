@@ -1,0 +1,182 @@
+DIRECTIONAL VALUE-VECTOR GEOMETRY vs. DOWNSTREAM WINNER -- REPORT
+==============================================================================
+
+Falsification test of PAUSE_NOTE.md's next-highest-value task: does the
+DIRECTION of value vectors (not just the norms g_i=||o-v_i|| that the
+already-proved exact margin Gamma uses) predict sign(kl_mass - kl_local)
+among the meaningful, set-changing inversions already found by
+experiments/full_grid_mechanistic_analysis.py? No new eviction/KL outcome
+was computed anywhere in this script.
+
+------------------------------------------------------------------------------
+1. SAMPLE COUNTS
+------------------------------------------------------------------------------
+meaningful inversions in source file        : 1987
+measurable (set-changing, >=1e-8 KL) subset  : 1962
+forward passes used for reconstruction       : 3 (one per prompt)
+max |g_recon - g_stored| across all pairs     : 0.000e+00
+  (cross-check: reconstructed ||o-v_i||/||o-v_j|| against the values
+   already stored in pairs.json by the original run -- near-zero confirms
+   the value-vector/output reconstruction is correct, independent of any
+   new eviction computation.)
+
+------------------------------------------------------------------------------
+2. TARGET DEFINITION
+------------------------------------------------------------------------------
+win_local = 1 iff advantage_mass_minus_local_at_change = kl_mass - kl_local > 0 (local-damage has smaller KL to the true output, i.e. local-damage wins); 0 otherwise (mass wins).
+
+------------------------------------------------------------------------------
+3. FEATURE DEFINITIONS
+------------------------------------------------------------------------------
+cos_vi_vj:
+    cos(v_i, v_j) -- angle between the two candidates' value vectors themselves.
+cos_vi_o:
+    cos(v_i, o) -- alignment of v_i with the actual attention output o.
+cos_vj_o:
+    cos(v_j, o) -- alignment of v_j with o.
+delta_cos_o:
+    cos(v_i,o) - cos(v_j,o) -- signed difference in output-alignment.
+cos_oi_oj:
+    cos(o-v_i, o-v_j) -- angle between the two SINGLETON local-residual directions; exact, since the proved identity Delta_i = alpha_i/(1-alpha_i)*(o-v_i) means direction(Delta_i) = direction(o-v_i) always (alpha_i/(1-alpha_i) > 0).
+cos_vidiff_o:
+    cos(v_i - v_j, o) -- alignment of the pair's displacement with the output direction.
+cos_vidiff_rpair:
+    cos(v_i - v_j, r_pair) where r_pair = (alpha_lo*v_i + alpha_hi*v_j) - (alpha_lo+alpha_hi)*o is the exact local-algebra residual r_B (Delta_B = -r_B/(1-m_B)) for the PAIR treated as a 2-element block B={i,j} -- an exact extension of the already-proved singleton identity to the minimal nontrivial block containing both candidates.
+norm_ratio:
+    ||v_i|| / ||v_j|| -- CONTROL feature; a naive norm ratio Gamma does not use (Gamma uses g_i=||o-v_i|| not ||v_i||), included to check that directional features are not merely proxying for an unrelated magnitude artifact.
+
+------------------------------------------------------------------------------
+4. POOLED STATISTICS (all measurable pairs together)
+------------------------------------------------------------------------------
+feature               spearman rho         p  pt-biserial r     AUC   weak?
+cos_vi_vj                  -0.1323 4.066e-09       -0.06432  0.4708     yes
+cos_vi_o                   -0.1754     5e-15       -0.09635  0.4377      NO
+cos_vj_o                   -0.1518 1.411e-11        -0.1162  0.4245      NO
+delta_cos_o               -0.06638  0.003263       0.004379  0.4926     yes
+cos_oi_oj                 -0.09001  6.54e-05       -0.04443  0.4837     yes
+cos_vidiff_o               -0.1384 7.498e-10       -0.08008  0.4496      NO
+cos_vidiff_rpair           0.03555    0.1155       -0.03381  0.4928     yes
+norm_ratio                 0.06191  0.006087       -0.03001  0.4972     yes
+
+Pre-declared weakness thresholds: |AUC-0.5| < 0.05 AND
+|point-biserial r| < 0.10 => called 'practically weak' regardless of p,
+per instruction not to treat tiny p-values with tiny effect sizes (n~1962)
+as scientifically meaningful.
+
+Baselines (same pooled treatment), for comparison:
+  abs_Gamma        AUC= 0.4864  spearman_rho= 0.01591  weak=yes
+  top1_share       AUC= 0.5471  spearman_rho= 0.04246  weak=yes
+  entropy_nats     AUC= 0.4996  spearman_rho= 0.06908  weak=yes
+
+------------------------------------------------------------------------------
+5. WITHIN-STRATUM STATISTICS (Simpson's-paradox control)
+------------------------------------------------------------------------------
+within_stratum_demeaned: feature and advantage each had their own
+(prompt,layer,head)-stratum mean subtracted before correlating -- isolates
+signal that exists WITHIN a stratum, immune to any between-stratum offset.
+eta_squared_between_stratum: fraction of the feature's own variance that is
+explained purely by which stratum a pair came from (high = feature mostly
+just identifies the stratum, not the pair).
+
+feature               within r  within p  eta^2(strat)  median per-stratum AUC
+cos_vi_vj             -0.04674   0.03843        0.2872                  0.5322
+cos_vi_o               0.03856   0.08769        0.5251                  0.4348
+cos_vj_o               0.03616    0.1093        0.3901                  0.4612
+delta_cos_o           0.002135    0.9247        0.3718                  0.5043
+cos_oi_oj             -0.05843  0.009635        0.2126                   0.522
+cos_vidiff_o          0.007615    0.7361        0.3716                  0.5183
+cos_vidiff_rpair       -0.0179    0.4282        0.3346                  0.4952
+norm_ratio             0.01377    0.5423        0.2994                  0.4961
+
+  baseline abs_Gamma      within_r=-0.01714  eta^2(strat)=   0.193
+  baseline top1_share     within_r=4.337e-18  eta^2(strat)=       1
+  baseline entropy_nats   within_r=5.204e-18  eta^2(strat)=       1
+
+Strata with >= 10 measurable pairs and reportable per-stratum stats: 35
+  cos_vi_vj            median_AUC= 0.5322  IQR=[0.4367522598369372, 0.5885416666666667]  frac_same_sign_as_pooled=0.4857
+  cos_vi_o             median_AUC= 0.4348  IQR=[0.36215401785714285, 0.5669221981721982]  frac_same_sign_as_pooled=0.4857
+  cos_vj_o             median_AUC= 0.4612  IQR=[0.39071637426900585, 0.55751998001998]  frac_same_sign_as_pooled=0.4571
+  delta_cos_o          median_AUC= 0.5043  IQR=[0.3828176431863068, 0.6248753561253562]  frac_same_sign_as_pooled=0.4571
+  cos_oi_oj            median_AUC=  0.522  IQR=[0.4149872448979592, 0.6360249109531749]  frac_same_sign_as_pooled=0.5143
+  cos_vidiff_o         median_AUC= 0.5183  IQR=[0.3839651420008563, 0.6315079365079366]  frac_same_sign_as_pooled=0.4857
+  cos_vidiff_rpair     median_AUC= 0.4952  IQR=[0.39652777777777776, 0.6266475340136054]  frac_same_sign_as_pooled=0.4
+  norm_ratio           median_AUC= 0.4961  IQR=[0.3669282106782107, 0.6416110675039247]  frac_same_sign_as_pooled=0.4857
+
+------------------------------------------------------------------------------
+6. LAYER 0 / HEAD 9 COUNTEREXAMPLE AUDIT
+------------------------------------------------------------------------------
+n measurable pairs at layer 0/head 9        : 274
+local-win rate (this cell)                  : 0.252  (pooled grid rate: 0.563)
+mean Gamma (this cell)                      : 0.3766  (known: highest positive-Gamma-mass in the whole grid, per MILESTONE_STATUS.md)
+per-prompt local-win rate:
+    prompt 0: n=160, local_win_rate=0.250
+    prompt 1: n=65, local_win_rate=0.323
+    prompt 2: n=49, local_win_rate=0.163
+directional-feature AUC restricted to this cell (0.5 = no separation):
+    cos_vi_vj            AUC=0.4965
+    cos_vi_o             AUC=0.4016
+    cos_vj_o             AUC=0.2518
+    delta_cos_o          AUC=0.6506
+    cos_oi_oj            AUC=0.6072
+    cos_vidiff_o         AUC=0.5429
+    cos_vidiff_rpair     AUC=0.4199
+    norm_ratio           AUC=0.4644
+
+At least one directional feature shows a non-trivial AUC restricted to this
+cell -- inspect the feature_auc list above before concluding it explains the
+counterexample; n is small (single-cell), so treat as suggestive only.
+
+------------------------------------------------------------------------------
+7. STRONGEST COUNTEREXAMPLES (largest |advantage| in each direction)
+------------------------------------------------------------------------------
+Largest mass-favoring pairs (advantage most negative):
+    prompt=1 layer=0 head=6 (i=24,j=2)  advantage=-1.9533e-02  Gamma=0.6109  cos_oi_oj=-0.359  cos_vidiff_rpair=0.605
+    prompt=1 layer=0 head=6 (i=29,j=2)  advantage=-1.9533e-02  Gamma=0.8231  cos_oi_oj=-0.380  cos_vidiff_rpair=0.731
+    prompt=1 layer=0 head=6 (i=24,j=39)  advantage=-1.9427e-02  Gamma=0.5234  cos_oi_oj=0.110  cos_vidiff_rpair=0.581
+    prompt=1 layer=0 head=6 (i=24,j=40)  advantage=-1.9427e-02  Gamma=0.4468  cos_oi_oj=-0.363  cos_vidiff_rpair=0.561
+    prompt=1 layer=0 head=6 (i=29,j=24)  advantage=-1.8662e-02  Gamma=0.2122  cos_oi_oj=0.452  cos_vidiff_rpair=0.236
+Largest local-favoring pairs (advantage most positive):
+    prompt=0 layer=0 head=6 (i=39,j=12)  advantage=6.2354e-03  Gamma=0.1711  cos_oi_oj=0.312  cos_vidiff_rpair=0.316
+    prompt=0 layer=0 head=6 (i=43,j=12)  advantage=6.2354e-03  Gamma=0.1046  cos_oi_oj=-0.011  cos_vidiff_rpair=0.125
+    prompt=0 layer=0 head=6 (i=53,j=12)  advantage=6.2354e-03  Gamma=0.0738  cos_oi_oj=-0.011  cos_vidiff_rpair=0.110
+    prompt=1 layer=0 head=3 (i=40,j=35)  advantage=7.2964e-03  Gamma=0.4048  cos_oi_oj=0.151  cos_vidiff_rpair=0.555
+    prompt=1 layer=0 head=3 (i=40,j=38)  advantage=7.2964e-03  Gamma=0.1219  cos_oi_oj=0.404  cos_vidiff_rpair=0.398
+
+------------------------------------------------------------------------------
+8. MINIMAL MULTIVARIATE TEST (grouped-by-stratum cross-validation)
+------------------------------------------------------------------------------
+Chosen (strongest, pairwise |corr|<=0.8) directional features: ['cos_vj_o', 'cos_vi_o', 'cos_vidiff_o']
+n pairs used (finite features, all models)  : 1962
+Manual logistic regression, Newton-Raphson, fixed ridge=1e-06 (not tuned),
+5-fold CV grouped by (prompt,layer,head) stratum (no stratum split across folds).
+
+model                          mean CV AUC   mean CV acc  folds used
+majority class                       0.500        0.5627          --
+|Gamma| only                        0.5223        0.5297           5
+concentration only                  0.5271         0.503           5
+directional features                0.5496        0.5517           5
+directional+baselines               0.5227        0.5312           5
+
+------------------------------------------------------------------------------
+9. DOES DIRECTIONAL GEOMETRY ADD INFORMATION BEYOND GAMMA / CONCENTRATION?
+------------------------------------------------------------------------------
+directional-only CV AUC   = 0.5496
+|Gamma|-only CV AUC       = 0.5223
+concentration-only CV AUC = 0.5271
+directional+baselines CV AUC = 0.5227
+(all AUCs are out-of-fold, grouped by stratum -- a stratum's pairs are never
+ split across train and test, so this cannot merely be 'which stratum is it'.)
+
+------------------------------------------------------------------------------
+10. VERDICT
+------------------------------------------------------------------------------
+DVG-B
+At least one directional feature is statistically detectable pooled, but the effect is practically weak (below the pre-declared |AUC-0.5|>=0.05 / |r|>=0.10 thresholds) and/or does not survive the within-stratum control.
+
+------------------------------------------------------------------------------
+11. NEXT RECOMMENDED EXPERIMENT
+------------------------------------------------------------------------------
+Weak pooled-only signal is not enough to act on. If pursued further, the next
+smallest step is the within-stratum-only version of the same test restricted
+to the specific features that showed non-negligible pooled AUC here, rather
+than a new feature family or a larger model.

@@ -1,0 +1,26 @@
+{
+  "n_cases": 14,
+  "n_pythia": 7,
+  "n_gpt2": 7,
+  "n_winner_flipped": 6,
+  "n_multi_sign_change": 1,
+  "immediate_matches_final": 8,
+  "emergence_depths": [
+    1,
+    3,
+    3,
+    7,
+    6,
+    11,
+    11,
+    1,
+    6,
+    4,
+    6,
+    9,
+    11,
+    7
+  ],
+  "median_emergence_depth_fraction": 0.5454545454545454,
+  "verdict": "DPH-C"
+}

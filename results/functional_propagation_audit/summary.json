@@ -1,0 +1,334 @@
+{
+  "seed_note": "reused exactly, no new draw (see results/downstream_propagation_sample, seed 20260910)",
+  "tol_delta_kl": 0.0001,
+  "by_arch": {
+    "pythia": {
+      "n": 100,
+      "category_counts": {
+        "immediate_consistent": 8,
+        "single_flip": 3,
+        "multiple_flip": 16,
+        "never_consistent": 7,
+        "unresolved": 66
+      },
+      "flip_rate": 0.19,
+      "flip_rate_ci95": [
+        0.1251465399270426,
+        0.27779024070807856
+      ],
+      "immediate_consistent_rate": 0.08,
+      "immediate_consistent_rate_ci95": [
+        0.04109296948581091,
+        0.14998266879403072
+      ],
+      "never_or_unresolved_rate": 0.73,
+      "never_or_unresolved_rate_ci95": [
+        0.6356769977376873,
+        0.8073053908233518
+      ],
+      "median_emergence_fraction": 0.6181818181818182
+    },
+    "gpt2": {
+      "n": 150,
+      "category_counts": {
+        "immediate_consistent": 41,
+        "single_flip": 12,
+        "multiple_flip": 11,
+        "never_consistent": 8,
+        "unresolved": 78
+      },
+      "flip_rate": 0.15333333333333332,
+      "flip_rate_ci95": [
+        0.10439879275574346,
+        0.2195811970519548
+      ],
+      "immediate_consistent_rate": 0.2733333333333333,
+      "immediate_consistent_rate_ci95": [
+        0.20834036087778668,
+        0.3496465555349391
+      ],
+      "never_or_unresolved_rate": 0.5733333333333334,
+      "never_or_unresolved_rate_ci95": [
+        0.49332380166580925,
+        0.6496804312594855
+      ],
+      "median_emergence_fraction": 0.2928571428571428
+    },
+    "pooled": {
+      "n": 250,
+      "category_counts": {
+        "immediate_consistent": 49,
+        "single_flip": 15,
+        "multiple_flip": 27,
+        "never_consistent": 15,
+        "unresolved": 144
+      },
+      "flip_rate": 0.168,
+      "flip_rate_ci95": [
+        0.12675788778063776,
+        0.21929098679311218
+      ],
+      "immediate_consistent_rate": 0.196,
+      "immediate_consistent_rate_ci95": [
+        0.15154950681109253,
+        0.2496518723166785
+      ],
+      "never_or_unresolved_rate": 0.636,
+      "never_or_unresolved_rate_ci95": [
+        0.5747152623980124,
+        0.6931683311500901
+      ],
+      "median_emergence_fraction": 0.3875
+    }
+  },
+  "by_final_winner": {
+    "pythia": {
+      "local": {
+        "n": 51,
+        "category_counts": {
+          "immediate_consistent": 6,
+          "single_flip": 0,
+          "multiple_flip": 8,
+          "never_consistent": 2,
+          "unresolved": 35
+        },
+        "flip_rate": 0.1568627450980392,
+        "flip_rate_ci95": [
+          0.08169125888021325,
+          0.2801070839835982
+        ],
+        "immediate_consistent_rate": 0.11764705882352941,
+        "immediate_consistent_rate_ci95": [
+          0.05504998764172768,
+          0.23381102297794787
+        ],
+        "never_or_unresolved_rate": 0.7254901960784313,
+        "never_or_unresolved_rate_ci95": [
+          0.5905308805092127,
+          0.8288587798945684
+        ],
+        "median_emergence_fraction": 0.6181818181818182
+      },
+      "mass": {
+        "n": 49,
+        "category_counts": {
+          "immediate_consistent": 2,
+          "single_flip": 3,
+          "multiple_flip": 8,
+          "never_consistent": 5,
+          "unresolved": 31
+        },
+        "flip_rate": 0.22448979591836735,
+        "flip_rate_ci95": [
+          0.1302483771472861,
+          0.35879056187045744
+        ],
+        "immediate_consistent_rate": 0.04081632653061224,
+        "immediate_consistent_rate_ci95": [
+          0.011265396927928273,
+          0.13713283476831106
+        ],
+        "never_or_unresolved_rate": 0.7346938775510204,
+        "never_or_unresolved_rate_ci95": [
+          0.5973744384734165,
+          0.8378886875485057
+        ],
+        "median_emergence_fraction": 0.5909090909090908
+      }
+    },
+    "gpt2": {
+      "local": {
+        "n": 75,
+        "category_counts": {
+          "immediate_consistent": 25,
+          "single_flip": 5,
+          "multiple_flip": 4,
+          "never_consistent": 6,
+          "unresolved": 35
+        },
+        "flip_rate": 0.12,
+        "flip_rate_ci95": [
+          0.06443298969072164,
+          0.2125984251968504
+        ],
+        "immediate_consistent_rate": 0.3333333333333333,
+        "immediate_consistent_rate_ci95": [
+          0.23708065705320355,
+          0.445827858248363
+        ],
+        "never_or_unresolved_rate": 0.5466666666666666,
+        "never_or_unresolved_rate_ci95": [
+          0.4344817369914825,
+          0.6543038787240788
+        ],
+        "median_emergence_fraction": 0.11805555555555555
+      },
+      "mass": {
+        "n": 75,
+        "category_counts": {
+          "immediate_consistent": 16,
+          "single_flip": 7,
+          "multiple_flip": 7,
+          "never_consistent": 2,
+          "unresolved": 43
+        },
+        "flip_rate": 0.18666666666666668,
+        "flip_rate_ci95": [
+          0.11458005622312066,
+          0.2892879525438247
+        ],
+        "immediate_consistent_rate": 0.21333333333333335,
+        "immediate_consistent_rate_ci95": [
+          0.13580086342007996,
+          0.31880178289861477
+        ],
+        "never_or_unresolved_rate": 0.6,
+        "never_or_unresolved_rate_ci95": [
+          0.48687832160076594,
+          0.7033765692182941
+        ],
+        "median_emergence_fraction": 0.5
+      }
+    },
+    "pooled": {
+      "local": {
+        "n": 126,
+        "category_counts": {
+          "immediate_consistent": 31,
+          "single_flip": 5,
+          "multiple_flip": 12,
+          "never_consistent": 8,
+          "unresolved": 70
+        },
+        "flip_rate": 0.1349206349206349,
+        "flip_rate_ci95": [
+          0.08597303227118422,
+          0.20547131222241413
+        ],
+        "immediate_consistent_rate": 0.24603174603174602,
+        "immediate_consistent_rate_ci95": [
+          0.17908230637931402,
+          0.3280094115292761
+        ],
+        "never_or_unresolved_rate": 0.6190476190476191,
+        "never_or_unresolved_rate_ci95": [
+          0.5319203742876679,
+          0.6991303829426805
+        ],
+        "median_emergence_fraction": 0.25
+      },
+      "mass": {
+        "n": 124,
+        "category_counts": {
+          "immediate_consistent": 18,
+          "single_flip": 10,
+          "multiple_flip": 15,
+          "never_consistent": 7,
+          "unresolved": 74
+        },
+        "flip_rate": 0.20161290322580644,
+        "flip_rate_ci95": [
+          0.1404555297898297,
+          0.28070315408146096
+        ],
+        "immediate_consistent_rate": 0.14516129032258066,
+        "immediate_consistent_rate_ci95": [
+          0.09383581399995203,
+          0.21781235060374507
+        ],
+        "never_or_unresolved_rate": 0.6532258064516129,
+        "never_or_unresolved_rate_ci95": [
+          0.5659890341563776,
+          0.7312538038556622
+        ],
+        "median_emergence_fraction": 0.5227272727272727
+      }
+    }
+  },
+  "cross_tabulation": {
+    "both_succeed": 71,
+    "residual_fails_functional_succeeds": 20,
+    "residual_succeeds_functional_fails": 118,
+    "both_fail": 41
+  },
+  "residual_never_consistent_resolution": {
+    "pythia": {
+      "n": 19,
+      "n_resolved": 5,
+      "frac": 0.2631578947368421
+    },
+    "gpt2": {
+      "n": 37,
+      "n_resolved": 15,
+      "frac": 0.40540540540540543
+    },
+    "pooled": {
+      "n": 56,
+      "n_resolved": 20,
+      "frac": 0.35714285714285715
+    }
+  },
+  "final_layer_validation": {
+    "max_final_layer_kl_err_mass": 1.544582062088743e-05,
+    "max_final_layer_kl_err_local": 2.2047007050808587e-05,
+    "max_reconstruction_err_vs_stored_dph": 0.0,
+    "n_sign_checks": 60,
+    "n_sign_agree": 60,
+    "frac_sign_agree": 1.0
+  },
+  "component_note": "Part IX correlation (|resid delta| vs |logit-space delta|) in never_consistent cases:",
+  "resid_vs_logit_correlation": {
+    "rho": 0.9025874149776125,
+    "p": 2.0483658292431304e-21,
+    "n": 56
+  },
+  "strongest_rescued_example": {
+    "arch": "pythia",
+    "prompt": 1,
+    "layer": 0,
+    "head": 3,
+    "i": 40,
+    "j": 35,
+    "depth_tertile": "early",
+    "eviction_depth_fraction": 0.0,
+    "final_winner": "local",
+    "advantage_final": 0.007296381093020832,
+    "reconstruction_err_vs_stored": 0.0,
+    "final_layer_validation": {
+      "err_mass": 1.279096839168492e-06,
+      "err_local": 2.2047007050808587e-05,
+      "sign_agrees": true
+    },
+    "residual_category": "never_consistent",
+    "functional_category": "multiple_flip",
+    "functional_emergence_layer": 11,
+    "functional_emergence_fraction": 1.0,
+    "functional_n_sign_changes": 7,
+    "functional_immediate_sign": "mass"
+  },
+  "strongest_counterexample": {
+    "arch": "gpt2",
+    "prompt": 1,
+    "layer": 0,
+    "head": 3,
+    "i": 23,
+    "j": 24,
+    "depth_tertile": "early",
+    "eviction_depth_fraction": 0.0,
+    "final_winner": "local",
+    "advantage_final": 9.750855576174094e-05,
+    "reconstruction_err_vs_stored": 0.0,
+    "final_layer_validation": {
+      "err_mass": 6.130873348867208e-07,
+      "err_local": 1.1256941872821342e-06,
+      "sign_agrees": null
+    },
+    "residual_category": "never_consistent",
+    "functional_category": "never_consistent",
+    "functional_emergence_layer": null,
+    "functional_emergence_fraction": 0.0,
+    "functional_n_sign_changes": 1,
+    "functional_immediate_sign": "local"
+  },
+  "verdict": "FLH-B"
+}

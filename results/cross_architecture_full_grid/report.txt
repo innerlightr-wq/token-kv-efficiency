@@ -1,0 +1,163 @@
+FULL GPT-2 GRID (12 layers x 12 heads x 3 prompts) vs Pythia-160M FROZEN BASELINE
+==============================================================================
+model=gpt2  n_prompts=3  n_layer_head_combos=144  n_prompt_layer_head_cells=432
+Adapter validation: NOT re-run this script -- frozen from the pilot's Part-0 gate (8/8 tests + inline checks, all far inside tolerance).
+
+------------------------------------------------------------------------------
+GAMMA IMPLEMENTATION SANITY CHECK (architecture-independent identity, not evidence)
+------------------------------------------------------------------------------
+  n_verification_checks=426816  n_mismatches=0
+
+------------------------------------------------------------------------------
+PRIMARY MEASUREMENTS
+------------------------------------------------------------------------------
+total candidate pairs: 426816
+meaningful inversions: 22983
+prevalence: GPT-2=5.3848%  Pythia=3.5501%  (relative +51.7%)
+set-change rate: 0.9957359787669147  (Pythia 0.996)
+measurable-KL rate: 0.9821717282062487  (Pythia 0.991)
+local wins=12889  mass wins=9588  rate=0.5734306179650309  95% CI=(0.5672009164924144, 0.5801497085910041)  (Pythia 0.563)
+sum advantage=57.09686184027521  95% CI=(47.197707154899014, 67.60940760966413)
+mean advantage=0.0025402349886673135  median=8.287046730337099e-07
+advantage percentiles: {'1': -0.011360014370613715, '5': -0.00025592429873205714, '25': -6.001279032354648e-06, '50': 8.287046730337099e-07, '75': 4.9648932531080035e-05, '95': 0.0017269842028319648, '99': 0.1207293476520633}
+
+------------------------------------------------------------------------------
+G6 -- CONCENTRATION VS PREVALENCE
+------------------------------------------------------------------------------
+top1_share vs prevalence: {'rho': -0.37947279707027987, 'p': 3.0331310762044237e-16}  (Pythia rho=-0.650)
+entropy vs prevalence: {'rho': 0.5378470828604509, 'p': 9.270683249413542e-34}  (Pythia rho=+0.759)
+depth_fraction vs prevalence: {'rho': -0.0481018768289595, 'p': 0.31854153386292}
+
+------------------------------------------------------------------------------
+CROSS-ARCHITECTURE PREDICTABILITY OF STRATUM-LEVEL PREVALENCE (Pearson r^2)
+------------------------------------------------------------------------------
+GPT-2:   r^2(top1_share)=0.1739   r^2(entropy)=0.2895
+Pythia:  r^2(top1_share)=0.2203   r^2(entropy)=0.3359
+
+------------------------------------------------------------------------------
+G7 -- |GAMMA| VS ADVANTAGE, POOLED AND WITHIN-STRATUM
+------------------------------------------------------------------------------
+pooled: {'rho_gamma_vs_abs_advantage': 0.01176158495541833, 'p_mag': 0.07520171730494253, 'ci_mag': (-0.0010162506394057141, 0.024659297046110532), 'rho_gamma_vs_signed_advantage': 0.011973784491197834, 'p_sign': 0.0700890359958583, 'ci_sign': (-0.0003995489839487745, 0.024830347507534562), 'n': 22885}
+within-stratum (demeaned by cell): {'rho_gamma_vs_abs_advantage': -0.010706782872427791, 'p': 0.10530587715261994, 'rho_gamma_vs_signed_advantage': -0.025507486602912577, 'p_sign': 0.000113788687616006, 'n': 22885}
+
+------------------------------------------------------------------------------
+CONCENTRATION OF INVERSIONS ACROSS STRATA
+------------------------------------------------------------------------------
+Gini coefficient (inversion counts across 432 cells): 0.4279
+top-10% of cells' share of all inversions: 0.31679937344994125
+
+------------------------------------------------------------------------------
+HETEROGENEITY
+------------------------------------------------------------------------------
+cells with zero inversions: 3 / 432
+top-10 highest-prevalence cells:
+    prompt=2 layer=0 head=9 depth=0.00  frac=0.3587  n_inv=226  top1=0.063
+    prompt=0 layer=1 head=8 depth=0.09  frac=0.2977  n_inv=426  top1=0.087
+    prompt=2 layer=0 head=11 depth=0.00  frac=0.2508  n_inv=158  top1=0.077
+    prompt=1 layer=0 head=9 depth=0.00  frac=0.2315  n_inv=209  top1=0.058
+    prompt=2 layer=1 head=4 depth=0.09  frac=0.2175  n_inv=137  top1=0.104
+    prompt=0 layer=1 head=10 depth=0.09  frac=0.2166  n_inv=310  top1=0.060
+    prompt=2 layer=1 head=8 depth=0.09  frac=0.2111  n_inv=133  top1=0.091
+    prompt=1 layer=1 head=9 depth=0.09  frac=0.2049  n_inv=185  top1=0.168
+    prompt=1 layer=1 head=8 depth=0.09  frac=0.2016  n_inv=182  top1=0.112
+    prompt=2 layer=2 head=7 depth=0.18  frac=0.1968  n_inv=124  top1=0.050
+strongly mass-favoring cells (>=70%, n>=5): 66
+    prompt=0 layer=2 head=6 depth=0.18  mass_rate=0.833  n=108
+    prompt=0 layer=2 head=8 depth=0.18  mass_rate=0.957  n=47
+    prompt=0 layer=2 head=11 depth=0.18  mass_rate=0.897  n=58
+    prompt=0 layer=3 head=1 depth=0.27  mass_rate=0.925  n=40
+    prompt=0 layer=5 head=3 depth=0.45  mass_rate=0.806  n=36
+    prompt=0 layer=5 head=4 depth=0.45  mass_rate=0.938  n=16
+    prompt=0 layer=5 head=10 depth=0.45  mass_rate=0.816  n=98
+    prompt=0 layer=7 head=3 depth=0.64  mass_rate=0.738  n=42
+    prompt=0 layer=7 head=6 depth=0.64  mass_rate=0.796  n=54
+    prompt=0 layer=9 head=0 depth=0.82  mass_rate=0.750  n=40
+    prompt=0 layer=9 head=2 depth=0.82  mass_rate=0.714  n=63
+    prompt=0 layer=9 head=9 depth=0.82  mass_rate=0.855  n=76
+    prompt=0 layer=9 head=10 depth=0.82  mass_rate=0.816  n=49
+    prompt=0 layer=9 head=11 depth=0.82  mass_rate=0.706  n=109
+    prompt=0 layer=10 head=2 depth=0.91  mass_rate=0.922  n=51
+strongly local-favoring cells (>=70%, n>=5): 125
+    prompt=0 layer=0 head=1 depth=0.00  local_rate=0.762  n=21
+    prompt=0 layer=0 head=3 depth=0.00  local_rate=0.833  n=6
+    prompt=0 layer=0 head=5 depth=0.00  local_rate=0.944  n=90
+    prompt=0 layer=0 head=6 depth=0.00  local_rate=0.809  n=47
+    prompt=0 layer=0 head=8 depth=0.00  local_rate=0.921  n=89
+    prompt=0 layer=0 head=10 depth=0.00  local_rate=0.980  n=150
+    prompt=0 layer=1 head=2 depth=0.09  local_rate=0.926  n=176
+    prompt=0 layer=1 head=5 depth=0.09  local_rate=0.740  n=154
+    prompt=0 layer=1 head=6 depth=0.09  local_rate=0.906  n=127
+    prompt=0 layer=1 head=8 depth=0.09  local_rate=0.775  n=426
+    prompt=0 layer=1 head=11 depth=0.09  local_rate=0.831  n=142
+    prompt=0 layer=2 head=1 depth=0.18  local_rate=0.991  n=214
+    prompt=0 layer=2 head=4 depth=0.18  local_rate=0.710  n=93
+    prompt=0 layer=2 head=5 depth=0.18  local_rate=0.826  n=23
+    prompt=0 layer=2 head=10 depth=0.18  local_rate=0.774  n=53
+win-rate vs depth: {'rho': -0.19134975694002532, 'p': 7.333451509164674e-05}
+
+cells with >=1 inversion: 429 / 432
+prompts with >=1 inversion: 3 / 3
+(layer,head) combos with >=1 inversion: 143 / 144
+
+------------------------------------------------------------------------------
+FALSIFICATION-TARGET SEARCH
+------------------------------------------------------------------------------
+High-entropy cells with LOWEST prevalence (should be rare if the relationship is robust):
+    prompt=0 layer=3 head=2  entropy=2.215  frac_inv=0.008385744234800839
+    prompt=0 layer=5 head=4  entropy=2.199  frac_inv=0.011879804332634521
+    prompt=0 layer=3 head=6  entropy=2.610  frac_inv=0.013277428371767994
+    prompt=1 layer=5 head=2  entropy=2.378  frac_inv=0.013289036544850499
+    prompt=1 layer=5 head=3  entropy=2.559  frac_inv=0.013289036544850499
+Concentrated (top1_share > median) cells with HIGHEST prevalence (should be rare):
+    prompt=1 layer=11 head=4  top1=0.484  frac_inv=0.15614617940199335
+    prompt=2 layer=11 head=0  top1=0.438  frac_inv=0.1380952380952381
+    prompt=2 layer=5 head=4  top1=0.479  frac_inv=0.1
+    prompt=1 layer=1 head=6  top1=0.450  frac_inv=0.09966777408637874
+    prompt=0 layer=11 head=11  top1=0.487  frac_inv=0.09853249475890985
+Cells with many inversions but negligible downstream (measurable) effect:
+Strongly mass-favoring cells despite the positive global local-win lean:
+    prompt=0 layer=2 head=6  mass_rate=0.833  n=108
+    prompt=0 layer=2 head=8  mass_rate=0.957  n=47
+    prompt=0 layer=2 head=11  mass_rate=0.897  n=58
+    prompt=0 layer=3 head=1  mass_rate=0.925  n=40
+    prompt=0 layer=5 head=3  mass_rate=0.806  n=36
+    prompt=0 layer=5 head=4  mass_rate=0.938  n=16
+    prompt=0 layer=5 head=10  mass_rate=0.816  n=98
+    prompt=0 layer=7 head=3  mass_rate=0.738  n=42
+    prompt=0 layer=7 head=6  mass_rate=0.796  n=54
+    prompt=0 layer=9 head=0  mass_rate=0.750  n=40
+
+------------------------------------------------------------------------------
+STRONGEST PAIR (largest |advantage|)
+------------------------------------------------------------------------------
+{
+  "prompt": 1,
+  "layer": 1,
+  "head": 2,
+  "i": 39,
+  "j": 42,
+  "alpha_lo": 0.06312971662097162,
+  "alpha_hi": 0.06937237938803663,
+  "g_lo": 4.979051177133074,
+  "g_hi": 4.365886447077183,
+  "M": 1.1062576230792296,
+  "G": 1.1404444979246733,
+  "Gamma": 0.030435288635976374,
+  "d_lo": 0.3355065214791959,
+  "d_hi": 0.32544911010975874,
+  "n_candidates": 43,
+  "k_max": 41,
+  "change_k": 41,
+  "q_at_change": 0.9534883720930233,
+  "changes_set_within_kmax": true,
+  "kl_mass_at_change": 1.5912148449430863,
+  "kl_local_at_change": 0.0288328498460216,
+  "advantage_mass_minus_local_at_change": 1.5623819950970648,
+  "above_noise_floor": true
+}
+
+------------------------------------------------------------------------------
+VERDICT
+------------------------------------------------------------------------------
+CAG-D
+Strong replication across principal empirical signatures on both complete grids.

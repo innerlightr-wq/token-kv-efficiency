@@ -1,0 +1,809 @@
+{
+  "seed": 20260910,
+  "tol_delta": 0.0001,
+  "n_pythia_pool": 1962,
+  "n_gpt2_pool": 22477,
+  "pythia_strata_allocation": {
+    "early_local": {
+      "available": 758,
+      "sampled": 17
+    },
+    "early_mass": {
+      "available": 625,
+      "sampled": 17
+    },
+    "mid_mass": {
+      "available": 218,
+      "sampled": 17
+    },
+    "mid_local": {
+      "available": 305,
+      "sampled": 17
+    },
+    "late_mass": {
+      "available": 15,
+      "sampled": 15
+    },
+    "late_local": {
+      "available": 41,
+      "sampled": 17
+    }
+  },
+  "gpt2_strata_allocation": {
+    "early_local": {
+      "available": 6444,
+      "sampled": 25
+    },
+    "early_mass": {
+      "available": 3693,
+      "sampled": 25
+    },
+    "mid_local": {
+      "available": 3078,
+      "sampled": 25
+    },
+    "mid_mass": {
+      "available": 2217,
+      "sampled": 25
+    },
+    "late_local": {
+      "available": 3367,
+      "sampled": 25
+    },
+    "late_mass": {
+      "available": 3678,
+      "sampled": 25
+    }
+  },
+  "by_arch": {
+    "pythia": {
+      "n": 100,
+      "flip_rate": 0.38,
+      "flip_rate_ci95": [
+        0.2909744920013438,
+        0.47790426179289663
+      ],
+      "immediate_consistent_rate": 0.38,
+      "immediate_consistent_rate_ci95": [
+        0.2909744920013438,
+        0.47790426179289663
+      ],
+      "multiple_flip_rate": 0.13,
+      "multiple_flip_rate_ci95": [
+        0.07757093858414264,
+        0.20980521894809878
+      ],
+      "unresolved_rate": 0.24,
+      "unresolved_rate_ci95": [
+        0.16691211265459965,
+        0.3323251872329213
+      ],
+      "median_emergence_fraction": 0.0,
+      "emergence_fraction_quartiles": [
+        0.0,
+        0.6
+      ],
+      "median_emergence_layer": 8.0,
+      "frac_emerges_in_final_third": 0.21052631578947367,
+      "frac_immediately_stable": 0.5052631578947369,
+      "category_counts": {
+        "immediate_consistent": 38,
+        "single_flip": 25,
+        "multiple_flip": 13,
+        "never_consistent": 19,
+        "unresolved": 5
+      }
+    },
+    "gpt2": {
+      "n": 150,
+      "flip_rate": 0.2866666666666667,
+      "flip_rate_ci95": [
+        0.22033702683064219,
+        0.3636506592048645
+      ],
+      "immediate_consistent_rate": 0.4666666666666667,
+      "immediate_consistent_rate_ci95": [
+        0.38865912474061715,
+        0.5463389512024308
+      ],
+      "multiple_flip_rate": 0.07333333333333333,
+      "multiple_flip_rate_ci95": [
+        0.04143838680502927,
+        0.12653698526598406
+      ],
+      "unresolved_rate": 0.24666666666666667,
+      "unresolved_rate_ci95": [
+        0.18458062005199127,
+        0.3214047571151728
+      ],
+      "median_emergence_fraction": 0.0,
+      "emergence_fraction_quartiles": [
+        0.0,
+        0.125
+      ],
+      "median_emergence_layer": 7.0,
+      "frac_emerges_in_final_third": 0.08666666666666667,
+      "frac_immediately_stable": 0.6866666666666666,
+      "category_counts": {
+        "immediate_consistent": 70,
+        "single_flip": 32,
+        "multiple_flip": 11,
+        "never_consistent": 37,
+        "unresolved": 0
+      }
+    },
+    "pooled": {
+      "n": 250,
+      "flip_rate": 0.324,
+      "flip_rate_ci95": [
+        0.26902875602743026,
+        0.38429835820443714
+      ],
+      "immediate_consistent_rate": 0.432,
+      "immediate_consistent_rate_ci95": [
+        0.372082059413591,
+        0.4939761438123577
+      ],
+      "multiple_flip_rate": 0.096,
+      "multiple_flip_rate_ci95": [
+        0.06536141854642746,
+        0.13886673003126823
+      ],
+      "unresolved_rate": 0.244,
+      "unresolved_rate_ci95": [
+        0.19489634565082414,
+        0.300852184140983
+      ],
+      "median_emergence_fraction": 0.0,
+      "emergence_fraction_quartiles": [
+        0.0,
+        0.2
+      ],
+      "median_emergence_layer": 7.0,
+      "frac_emerges_in_final_third": 0.1346938775510204,
+      "frac_immediately_stable": 0.6163265306122448,
+      "category_counts": {
+        "immediate_consistent": 108,
+        "single_flip": 57,
+        "multiple_flip": 24,
+        "never_consistent": 56,
+        "unresolved": 5
+      }
+    }
+  },
+  "by_depth_tertile": {
+    "pythia": {
+      "early": {
+        "n": 34,
+        "flip_rate": 0.5588235294117647,
+        "flip_rate_ci95": [
+          0.3945361778918369,
+          0.7111675978470325
+        ],
+        "immediate_consistent_rate": 0.2647058823529412,
+        "immediate_consistent_rate_ci95": [
+          0.14601027541553796,
+          0.4311746216289845
+        ],
+        "multiple_flip_rate": 0.17647058823529413,
+        "multiple_flip_rate_ci95": [
+          0.08348855603569685,
+          0.33514067740052156
+        ],
+        "unresolved_rate": 0.17647058823529413,
+        "unresolved_rate_ci95": [
+          0.08348855603569685,
+          0.33514067740052156
+        ],
+        "median_emergence_fraction": 0.125,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.5227272727272727
+        ],
+        "median_emergence_layer": 4.0,
+        "frac_emerges_in_final_third": 0.14705882352941177,
+        "frac_immediately_stable": 0.38235294117647056,
+        "category_counts": {
+          "immediate_consistent": 9,
+          "single_flip": 13,
+          "multiple_flip": 6,
+          "never_consistent": 6,
+          "unresolved": 0
+        }
+      },
+      "mid": {
+        "n": 34,
+        "flip_rate": 0.47058823529411764,
+        "flip_rate_ci95": [
+          0.31451251633111366,
+          0.6326355957994516
+        ],
+        "immediate_consistent_rate": 0.38235294117647056,
+        "immediate_consistent_rate_ci95": [
+          0.23899964851608782,
+          0.5495928000061734
+        ],
+        "multiple_flip_rate": 0.20588235294117646,
+        "multiple_flip_rate_ci95": [
+          0.1034939602235132,
+          0.3679871610821398
+        ],
+        "unresolved_rate": 0.14705882352941177,
+        "unresolved_rate_ci95": [
+          0.06449346382626417,
+          0.30128388174051957
+        ],
+        "median_emergence_fraction": 0.2,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.8
+        ],
+        "median_emergence_layer": 7.0,
+        "frac_emerges_in_final_third": 0.29411764705882354,
+        "frac_immediately_stable": 0.4411764705882353,
+        "category_counts": {
+          "immediate_consistent": 13,
+          "single_flip": 9,
+          "multiple_flip": 7,
+          "never_consistent": 5,
+          "unresolved": 0
+        }
+      },
+      "late": {
+        "n": 32,
+        "flip_rate": 0.09375,
+        "flip_rate_ci95": [
+          0.032400962626319516,
+          0.24218499335778831
+        ],
+        "immediate_consistent_rate": 0.5,
+        "immediate_consistent_rate_ci95": [
+          0.33630614316859386,
+          0.6636938568314061
+        ],
+        "multiple_flip_rate": 0.0,
+        "multiple_flip_rate_ci95": [
+          0.0,
+          0.1071827150573635
+        ],
+        "unresolved_rate": 0.40625,
+        "unresolved_rate_ci95": [
+          0.255194024803138,
+          0.5774027342701177
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.25
+        ],
+        "median_emergence_layer": 10.0,
+        "frac_emerges_in_final_third": 0.18518518518518517,
+        "frac_immediately_stable": 0.7407407407407407,
+        "category_counts": {
+          "immediate_consistent": 16,
+          "single_flip": 3,
+          "multiple_flip": 0,
+          "never_consistent": 8,
+          "unresolved": 5
+        }
+      }
+    },
+    "gpt2": {
+      "early": {
+        "n": 50,
+        "flip_rate": 0.32,
+        "flip_rate_ci95": [
+          0.20758044093999403,
+          0.45810557136276076
+        ],
+        "immediate_consistent_rate": 0.42,
+        "immediate_consistent_rate_ci95": [
+          0.2937479723456693,
+          0.5576680331222217
+        ],
+        "multiple_flip_rate": 0.16,
+        "multiple_flip_rate_ci95": [
+          0.08337321362087696,
+          0.2851448096176598
+        ],
+        "unresolved_rate": 0.26,
+        "unresolved_rate_ci95": [
+          0.15871379651367384,
+          0.3955342198899992
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.09772727272727273
+        ],
+        "median_emergence_layer": 2.0,
+        "frac_emerges_in_final_third": 0.04,
+        "frac_immediately_stable": 0.64,
+        "category_counts": {
+          "immediate_consistent": 21,
+          "single_flip": 8,
+          "multiple_flip": 8,
+          "never_consistent": 13,
+          "unresolved": 0
+        }
+      },
+      "mid": {
+        "n": 50,
+        "flip_rate": 0.36,
+        "flip_rate_ci95": [
+          0.24138562967182875,
+          0.49859237989698046
+        ],
+        "immediate_consistent_rate": 0.3,
+        "immediate_consistent_rate_ci95": [
+          0.1910338908960936,
+          0.4375061227736339
+        ],
+        "multiple_flip_rate": 0.06,
+        "multiple_flip_rate_ci95": [
+          0.020614596364630478,
+          0.16217343370877002
+        ],
+        "unresolved_rate": 0.34,
+        "unresolved_rate_ci95": [
+          0.2243676963506106,
+          0.47846431458517147
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.19166666666666668
+        ],
+        "median_emergence_layer": 6.0,
+        "frac_emerges_in_final_third": 0.1,
+        "frac_immediately_stable": 0.62,
+        "category_counts": {
+          "immediate_consistent": 15,
+          "single_flip": 15,
+          "multiple_flip": 3,
+          "never_consistent": 17,
+          "unresolved": 0
+        }
+      },
+      "late": {
+        "n": 50,
+        "flip_rate": 0.18,
+        "flip_rate_ci95": [
+          0.0977008273245379,
+          0.3079631945470261
+        ],
+        "immediate_consistent_rate": 0.68,
+        "immediate_consistent_rate_ci95": [
+          0.5418944286372394,
+          0.792419559060006
+        ],
+        "multiple_flip_rate": 0.0,
+        "multiple_flip_rate_ci95": [
+          0.0,
+          0.07135003417431873
+        ],
+        "unresolved_rate": 0.14,
+        "unresolved_rate_ci95": [
+          0.06950745262022862,
+          0.2618645719852809
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.0
+        ],
+        "median_emergence_layer": 10.0,
+        "frac_emerges_in_final_third": 0.12,
+        "frac_immediately_stable": 0.8,
+        "category_counts": {
+          "immediate_consistent": 34,
+          "single_flip": 9,
+          "multiple_flip": 0,
+          "never_consistent": 7,
+          "unresolved": 0
+        }
+      }
+    },
+    "pooled": {
+      "early": {
+        "n": 84,
+        "flip_rate": 0.4166666666666667,
+        "flip_rate_ci95": [
+          0.3171466976499569,
+          0.5234755132387336
+        ],
+        "immediate_consistent_rate": 0.35714285714285715,
+        "immediate_consistent_rate_ci95": [
+          0.2629920932999957,
+          0.46378883965204515
+        ],
+        "multiple_flip_rate": 0.16666666666666666,
+        "multiple_flip_rate_ci95": [
+          0.10195649348099849,
+          0.2605323500737637
+        ],
+        "unresolved_rate": 0.2261904761904762,
+        "unresolved_rate_ci95": [
+          0.14985904898307534,
+          0.32647107250833646
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.2181818181818182
+        ],
+        "median_emergence_layer": 3.0,
+        "frac_emerges_in_final_third": 0.08333333333333333,
+        "frac_immediately_stable": 0.5357142857142857,
+        "category_counts": {
+          "immediate_consistent": 30,
+          "single_flip": 21,
+          "multiple_flip": 14,
+          "never_consistent": 19,
+          "unresolved": 0
+        }
+      },
+      "mid": {
+        "n": 84,
+        "flip_rate": 0.40476190476190477,
+        "flip_rate_ci95": [
+          0.3061943608400985,
+          0.511659594461262
+        ],
+        "immediate_consistent_rate": 0.3333333333333333,
+        "immediate_consistent_rate_ci95": [
+          0.24177064973177226,
+          0.4394737720456087
+        ],
+        "multiple_flip_rate": 0.11904761904761904,
+        "multiple_flip_rate_ci95": [
+          0.065964782536511,
+          0.2054510386689315
+        ],
+        "unresolved_rate": 0.2619047619047619,
+        "unresolved_rate_ci95": [
+          0.1797835031577335,
+          0.36485138509566806
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.25
+        ],
+        "median_emergence_layer": 7.0,
+        "frac_emerges_in_final_third": 0.17857142857142858,
+        "frac_immediately_stable": 0.5476190476190477,
+        "category_counts": {
+          "immediate_consistent": 28,
+          "single_flip": 24,
+          "multiple_flip": 10,
+          "never_consistent": 22,
+          "unresolved": 0
+        }
+      },
+      "late": {
+        "n": 82,
+        "flip_rate": 0.14634146341463414,
+        "flip_rate_ci95": [
+          0.08574077865956604,
+          0.23859613957122183
+        ],
+        "immediate_consistent_rate": 0.6097560975609756,
+        "immediate_consistent_rate_ci95": [
+          0.5015337111477397,
+          0.7081548314702916
+        ],
+        "multiple_flip_rate": 0.0,
+        "multiple_flip_rate_ci95": [
+          0.0,
+          0.044752194740079396
+        ],
+        "unresolved_rate": 0.24390243902439024,
+        "unresolved_rate_ci95": [
+          0.1637976208028234,
+          0.3469291130884367
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.0
+        ],
+        "median_emergence_layer": 10.0,
+        "frac_emerges_in_final_third": 0.14285714285714285,
+        "frac_immediately_stable": 0.7792207792207793,
+        "category_counts": {
+          "immediate_consistent": 50,
+          "single_flip": 12,
+          "multiple_flip": 0,
+          "never_consistent": 15,
+          "unresolved": 5
+        }
+      }
+    }
+  },
+  "by_final_winner": {
+    "pythia": {
+      "local": {
+        "n": 51,
+        "flip_rate": 0.23529411764705882,
+        "flip_rate_ci95": [
+          0.14004812598862518,
+          0.36762488136345783
+        ],
+        "immediate_consistent_rate": 0.6274509803921569,
+        "immediate_consistent_rate_ci95": [
+          0.4902496270033425,
+          0.746796702790099
+        ],
+        "multiple_flip_rate": 0.09803921568627451,
+        "multiple_flip_rate_ci95": [
+          0.04260744495307697,
+          0.2097848995445307
+        ],
+        "unresolved_rate": 0.13725490196078433,
+        "unresolved_rate_ci95": [
+          0.06811015331542726,
+          0.25721952342631627
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.375
+        ],
+        "median_emergence_layer": 7.5,
+        "frac_emerges_in_final_third": 0.11764705882352941,
+        "frac_immediately_stable": 0.6666666666666666,
+        "category_counts": {
+          "immediate_consistent": 32,
+          "single_flip": 7,
+          "multiple_flip": 5,
+          "never_consistent": 7,
+          "unresolved": 0
+        }
+      },
+      "mass": {
+        "n": 49,
+        "flip_rate": 0.5306122448979592,
+        "flip_rate_ci95": [
+          0.39380627019919845,
+          0.6629671810210522
+        ],
+        "immediate_consistent_rate": 0.12244897959183673,
+        "immediate_consistent_rate_ci95": [
+          0.057347477598098245,
+          0.2424466240188096
+        ],
+        "multiple_flip_rate": 0.16326530612244897,
+        "multiple_flip_rate_ci95": [
+          0.08512596988208977,
+          0.29036606669515236
+        ],
+        "unresolved_rate": 0.3469387755102041,
+        "unresolved_rate_ci95": [
+          0.2292420960931444,
+          0.4868906478056021
+        ],
+        "median_emergence_fraction": 0.2,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.8
+        ],
+        "median_emergence_layer": 8.5,
+        "frac_emerges_in_final_third": 0.3181818181818182,
+        "frac_immediately_stable": 0.3181818181818182,
+        "category_counts": {
+          "immediate_consistent": 6,
+          "single_flip": 18,
+          "multiple_flip": 8,
+          "never_consistent": 12,
+          "unresolved": 5
+        }
+      }
+    },
+    "gpt2": {
+      "local": {
+        "n": 75,
+        "flip_rate": 0.18666666666666668,
+        "flip_rate_ci95": [
+          0.11458005622312066,
+          0.2892879525438247
+        ],
+        "immediate_consistent_rate": 0.6133333333333333,
+        "immediate_consistent_rate_ci95": [
+          0.5001726873212743,
+          0.7154495222736602
+        ],
+        "multiple_flip_rate": 0.05333333333333334,
+        "multiple_flip_rate_ci95": [
+          0.020933088960043124,
+          0.1292617320481556
+        ],
+        "unresolved_rate": 0.2,
+        "unresolved_rate_ci95": [
+          0.12512038203120296,
+          0.3041149455116171
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.0
+        ],
+        "median_emergence_layer": 6.0,
+        "frac_emerges_in_final_third": 0.08,
+        "frac_immediately_stable": 0.7733333333333333,
+        "category_counts": {
+          "immediate_consistent": 46,
+          "single_flip": 10,
+          "multiple_flip": 4,
+          "never_consistent": 15,
+          "unresolved": 0
+        }
+      },
+      "mass": {
+        "n": 75,
+        "flip_rate": 0.38666666666666666,
+        "flip_rate_ci95": [
+          0.2845504777263397,
+          0.4998273126787256
+        ],
+        "immediate_consistent_rate": 0.32,
+        "immediate_consistent_rate_ci95": [
+          0.22542843754055913,
+          0.43211275898513285
+        ],
+        "multiple_flip_rate": 0.09333333333333334,
+        "multiple_flip_rate_ci95": [
+          0.04594793932894482,
+          0.1803488380068779
+        ],
+        "unresolved_rate": 0.29333333333333333,
+        "unresolved_rate_ci95": [
+          0.2023999721815816,
+          0.4044065867923611
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.18333333333333335
+        ],
+        "median_emergence_layer": 8.0,
+        "frac_emerges_in_final_third": 0.09333333333333334,
+        "frac_immediately_stable": 0.6,
+        "category_counts": {
+          "immediate_consistent": 24,
+          "single_flip": 22,
+          "multiple_flip": 7,
+          "never_consistent": 22,
+          "unresolved": 0
+        }
+      }
+    },
+    "pooled": {
+      "local": {
+        "n": 126,
+        "flip_rate": 0.20634920634920634,
+        "flip_rate_ci95": [
+          0.14488830948972267,
+          0.2851864893420847
+        ],
+        "immediate_consistent_rate": 0.6190476190476191,
+        "immediate_consistent_rate_ci95": [
+          0.5319203742876679,
+          0.6991303829426805
+        ],
+        "multiple_flip_rate": 0.07142857142857142,
+        "multiple_flip_rate_ci95": [
+          0.0380307121123797,
+          0.1301865618583662
+        ],
+        "unresolved_rate": 0.1746031746031746,
+        "unresolved_rate_ci95": [
+          0.11822571654205201,
+          0.2502355470283292
+        ],
+        "median_emergence_fraction": 0.0,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.125
+        ],
+        "median_emergence_layer": 6.5,
+        "frac_emerges_in_final_third": 0.09523809523809523,
+        "frac_immediately_stable": 0.7301587301587301,
+        "category_counts": {
+          "immediate_consistent": 78,
+          "single_flip": 17,
+          "multiple_flip": 9,
+          "never_consistent": 22,
+          "unresolved": 0
+        }
+      },
+      "mass": {
+        "n": 124,
+        "flip_rate": 0.4435483870967742,
+        "flip_rate_ci95": [
+          0.35910800396379056,
+          0.5313814767686156
+        ],
+        "immediate_consistent_rate": 0.24193548387096775,
+        "immediate_consistent_rate_ci95": [
+          0.17504889877225968,
+          0.3243315845758836
+        ],
+        "multiple_flip_rate": 0.12096774193548387,
+        "multiple_flip_rate_ci95": [
+          0.07469431876757412,
+          0.19002076615001137
+        ],
+        "unresolved_rate": 0.31451612903225806,
+        "unresolved_rate_ci95": [
+          0.2394074548604695,
+          0.4007722675460084
+        ],
+        "median_emergence_fraction": 0.09090909090909091,
+        "emergence_fraction_quartiles": [
+          0.0,
+          0.3666666666666667
+        ],
+        "median_emergence_layer": 8.0,
+        "frac_emerges_in_final_third": 0.17647058823529413,
+        "frac_immediately_stable": 0.4957983193277311,
+        "category_counts": {
+          "immediate_consistent": 30,
+          "single_flip": 40,
+          "multiple_flip": 15,
+          "never_consistent": 34,
+          "unresolved": 5
+        }
+      }
+    }
+  },
+  "architecture_comparison": {
+    "flip_rate_diff_pythia_minus_gpt2": {
+      "diff": 0.09333333333333332,
+      "ci95": [
+        -0.02619869739638518,
+        0.21286536406305184
+      ]
+    },
+    "multiple_flip_rate_diff_pythia_minus_gpt2": {
+      "diff": 0.05666666666666667,
+      "ci95": [
+        -0.021341260375919713,
+        0.13467459370925305
+      ]
+    }
+  },
+  "component_audit": {
+    "attn_larger": 88,
+    "mlp_larger": 32,
+    "comparable": 69,
+    "n_evaluated": 189
+  },
+  "strongest_counterexample": {
+    "arch": "gpt2",
+    "prompt": 1,
+    "layer": 0,
+    "head": 10,
+    "i": 14,
+    "j": 29,
+    "depth_tertile": "early",
+    "eviction_depth_fraction": 0.0,
+    "n_downstream_layers": 12,
+    "change_k": 12,
+    "n_candidates": 43,
+    "kl_mass_final": 0.00668807448302702,
+    "kl_local_final": 0.017122888672398473,
+    "advantage_final": -0.010434814189371453,
+    "final_winner": "mass",
+    "category": "single_flip",
+    "emergence_layer": 1,
+    "emergence_fraction": 0.09090909090909091,
+    "n_sign_changes": 1,
+    "immediate_sign": "local"
+  },
+  "falsification_checks": {
+    "flip_rate_near_zero": false,
+    "almost_all_immediately_stable": false
+  },
+  "verdict": "DPH-C"
+}

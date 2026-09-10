@@ -1,0 +1,107 @@
+DOWNSTREAM PROPAGATION HYPOTHESIS -- MODERATE-SCALE STRATIFIED RANDOM REPLICATION
+====================================================================================================
+
+seed=20260910  TOL_DELTA=1.0e-04
+measurable pools: pythia=1962  gpt2=22477
+sampled: pythia=100  gpt2=150  pooled=250
+
+Stratum allocation (available / sampled), by (depth_tertile, final_winner):
+  pythia: {'early_local': {'available': 758, 'sampled': 17}, 'early_mass': {'available': 625, 'sampled': 17}, 'mid_mass': {'available': 218, 'sampled': 17}, 'mid_local': {'available': 305, 'sampled': 17}, 'late_mass': {'available': 15, 'sampled': 15}, 'late_local': {'available': 41, 'sampled': 17}}
+  gpt2:   {'early_local': {'available': 6444, 'sampled': 25}, 'early_mass': {'available': 3693, 'sampled': 25}, 'mid_local': {'available': 3078, 'sampled': 25}, 'mid_mass': {'available': 2217, 'sampled': 25}, 'late_local': {'available': 3367, 'sampled': 25}, 'late_mass': {'available': 3678, 'sampled': 25}}
+
+----------------------------------------------------------------------------------------------------
+PRIMARY STATISTICS BY ARCHITECTURE
+----------------------------------------------------------------------------------------------------
+[pythia] n=100
+  flip_rate               = 0.38  95% CI (0.291, 0.4779)
+  immediate_consistent    = 0.38  95% CI (0.291, 0.4779)
+  multiple_flip_rate      = 0.13  95% CI (0.07757, 0.2098)
+  unresolved_rate         = 0.24  95% CI (0.1669, 0.3323)
+  median_emergence_frac   = 0  IQR=[0.0, 0.6]
+  median_emergence_layer  = 8
+  frac_emerges_final_third= 0.2105
+  frac_immediately_stable = 0.5053
+  category_counts         = {'immediate_consistent': 38, 'single_flip': 25, 'multiple_flip': 13, 'never_consistent': 19, 'unresolved': 5}
+
+[gpt2] n=150
+  flip_rate               = 0.2867  95% CI (0.2203, 0.3637)
+  immediate_consistent    = 0.4667  95% CI (0.3887, 0.5463)
+  multiple_flip_rate      = 0.07333  95% CI (0.04144, 0.1265)
+  unresolved_rate         = 0.2467  95% CI (0.1846, 0.3214)
+  median_emergence_frac   = 0  IQR=[0.0, 0.125]
+  median_emergence_layer  = 7
+  frac_emerges_final_third= 0.08667
+  frac_immediately_stable = 0.6867
+  category_counts         = {'immediate_consistent': 70, 'single_flip': 32, 'multiple_flip': 11, 'never_consistent': 37, 'unresolved': 0}
+
+[pooled] n=250
+  flip_rate               = 0.324  95% CI (0.269, 0.3843)
+  immediate_consistent    = 0.432  95% CI (0.3721, 0.494)
+  multiple_flip_rate      = 0.096  95% CI (0.06536, 0.1389)
+  unresolved_rate         = 0.244  95% CI (0.1949, 0.3009)
+  median_emergence_frac   = 0  IQR=[0.0, 0.2]
+  median_emergence_layer  = 7
+  frac_emerges_final_third= 0.1347
+  frac_immediately_stable = 0.6163
+  category_counts         = {'immediate_consistent': 108, 'single_flip': 57, 'multiple_flip': 24, 'never_consistent': 56, 'unresolved': 5}
+
+----------------------------------------------------------------------------------------------------
+EVICTION-DEPTH EFFECT (early/mid/late, remaining-depth-normalized emergence fraction)
+----------------------------------------------------------------------------------------------------
+[pythia]
+  early  n=34   flip_rate=0.5588 median_emergence_frac=0.125
+  mid    n=34   flip_rate=0.4706 median_emergence_frac=0.2
+  late   n=32   flip_rate=0.09375 median_emergence_frac=0
+[gpt2]
+  early  n=50   flip_rate=0.32 median_emergence_frac=0
+  mid    n=50   flip_rate=0.36 median_emergence_frac=0
+  late   n=50   flip_rate=0.18 median_emergence_frac=0
+[pooled]
+  early  n=84   flip_rate=0.4167 median_emergence_frac=0
+  mid    n=84   flip_rate=0.4048 median_emergence_frac=0
+  late   n=82   flip_rate=0.1463 median_emergence_frac=0
+
+----------------------------------------------------------------------------------------------------
+FINAL-WINNER EFFECT (local-win vs mass-win cases)
+----------------------------------------------------------------------------------------------------
+[pythia]
+  local  n=51   flip_rate=0.2353 immediate_consistent=0.6275 median_emergence_frac=0
+  mass   n=49   flip_rate=0.5306 immediate_consistent=0.1224 median_emergence_frac=0.2
+[gpt2]
+  local  n=75   flip_rate=0.1867 immediate_consistent=0.6133 median_emergence_frac=0
+  mass   n=75   flip_rate=0.3867 immediate_consistent=0.32 median_emergence_frac=0
+[pooled]
+  local  n=126  flip_rate=0.2063 immediate_consistent=0.619 median_emergence_frac=0
+  mass   n=124  flip_rate=0.4435 immediate_consistent=0.2419 median_emergence_frac=0.09091
+
+----------------------------------------------------------------------------------------------------
+ARCHITECTURE COMPARISON (simple risk difference, normal-approx 95% CI)
+----------------------------------------------------------------------------------------------------
+flip_rate difference (pythia - gpt2): 0.09333  95% CI (-0.0262, 0.2129)
+multiple_flip_rate difference (pythia - gpt2): 0.05667  95% CI (-0.02134, 0.1347)
+(A CI crossing zero means the architectures are not distinguishable at this sample size --
+ not promoted to an architectural mechanism regardless of the point estimate.)
+
+----------------------------------------------------------------------------------------------------
+COMPONENT AUDIT (descriptive only, at the emergence layer)
+----------------------------------------------------------------------------------------------------
+n_evaluated=189  attn_larger=88 (0.4656)  mlp_larger=32 (0.1693)  comparable=69 (0.3651)
+('larger' = >1.5x the other component's |delta| at the emergence layer)
+
+----------------------------------------------------------------------------------------------------
+STRONGEST NATURALLY SAMPLED COUNTEREXAMPLE (largest |advantage| among flipped/never-consistent cases)
+----------------------------------------------------------------------------------------------------
+[gpt2] prompt=1 layer=0 head=10 i=14 j=29
+  advantage=-1.0435e-02  final_winner=mass  category=single_flip
+  immediate_sign=local  emergence_layer=1  emergence_fraction=0.09091  n_sign_changes=1
+
+----------------------------------------------------------------------------------------------------
+FALSIFICATION CHECKS
+----------------------------------------------------------------------------------------------------
+flip_rate_near_zero (<5%, pooled): False
+almost_all_immediately_stable (>90%, pooled): False
+
+----------------------------------------------------------------------------------------------------
+VERDICT
+----------------------------------------------------------------------------------------------------
+DPH-C

@@ -1,0 +1,81 @@
+STATE-DEPENDENT PROPAGATION HYPOTHESIS (SDPH) AUDIT
+====================================================================================================
+
+seed=20260910  n_cases=24
+selection cells (arch_categorygroup_depthtertile: available/selected):
+  pythia_flip_early: {'available': 19, 'selected': 2}
+  pythia_unresolved_early: {'available': 6, 'selected': 2}
+  pythia_stable_early: {'available': 9, 'selected': 2}
+  pythia_flip_mid: {'available': 16, 'selected': 2}
+  pythia_stable_mid: {'available': 13, 'selected': 2}
+  pythia_unresolved_mid: {'available': 5, 'selected': 2}
+  gpt2_stable_mid: {'available': 15, 'selected': 2}
+  gpt2_unresolved_mid: {'available': 17, 'selected': 2}
+  gpt2_flip_early: {'available': 16, 'selected': 2}
+  gpt2_unresolved_early: {'available': 13, 'selected': 2}
+  gpt2_stable_early: {'available': 21, 'selected': 2}
+  gpt2_flip_mid: {'available': 18, 'selected': 2}
+
+----------------------------------------------------------------------------------------------------
+VALIDATION (Part IV): swapping a state's OWN natural value back in must reproduce
+the already-captured block output exactly
+----------------------------------------------------------------------------------------------------
+max validation error across all 24 cases: 0.000e+00
+(tolerance 1.0e-04; PASSED)
+
+----------------------------------------------------------------------------------------------------
+PRIMARY STATE-DEPENDENCE DIAGNOSTIC S (scale=1.0), BY CASE CLASS
+----------------------------------------------------------------------------------------------------
+[stable] n=8  median_S=0.03439  mean_S=0.04584  IQR=[0.02277, 0.05819]
+    values=[0.01912, 0.0392, 0.04624, 0.02004, 0.02368, 0.09484, 0.02958, 0.09405]
+[flip] n=8  median_S=0.009823  mean_S=0.09284  IQR=[0.002485, 0.05318]
+    values=[0.001977, 0.004006, 0.1071, 0.01564, 0.00234, 0.002533, 0.03519, 0.5738]
+[unresolved] n=8  median_S=0.01907  mean_S=0.02184  IQR=[0.001545, 0.03185]
+    values=[0.0002203, 0.0009947, 0.06526, 0.01495, 0.03893, 0.001728, 0.02949, 0.02319]
+
+flip / stable median-S ratio: 0.2856
+
+----------------------------------------------------------------------------------------------------
+ARCHITECTURE-SEPARATED
+----------------------------------------------------------------------------------------------------
+[pythia]
+    stable      n=4  median_S=0.07015
+    flip        n=4  median_S=0.07117
+    unresolved  n=4  median_S=0.01996
+[gpt2]
+    stable      n=4  median_S=0.02481
+    flip        n=4  median_S=0.00327
+    unresolved  n=4  median_S=0.01907
+
+----------------------------------------------------------------------------------------------------
+LINEARITY CONTROL (Part VII): does S shrink toward zero as c -> 0?
+----------------------------------------------------------------------------------------------------
+  [stable] median_S at c=0.25: 0.03438   c=0.5: 0.03439   c=1.0: 0.03439
+  [flip] median_S at c=0.25: 0.01202   c=0.5: 0.00989   c=1.0: 0.009823
+  [unresolved] median_S at c=0.25: 0.01897   c=0.5: 0.019   c=1.0: 0.01907
+
+Relative nonlinearity of the OWN-state response (actual vs. c times the full-scale response):
+  delta_m_c0.25: median rel. nonlinearity = 0.0007074
+  delta_m_c0.5: median rel. nonlinearity = 0.000404
+  delta_l_c0.25: median rel. nonlinearity = 0.0008987
+  delta_l_c0.5: median rel. nonlinearity = 0.0007756
+
+----------------------------------------------------------------------------------------------------
+COMPONENT AUDIT (secondary, descriptive): attention vs MLP share of the state-dependence numerator
+----------------------------------------------------------------------------------------------------
+n=48  attn_larger=10 (0.2083)  mlp_larger=26 (0.5417)  comparable=12 (0.25)
+
+----------------------------------------------------------------------------------------------------
+STRONGEST EVIDENCE FOR SDPH (largest state-dependence S)
+----------------------------------------------------------------------------------------------------
+[pythia] prompt=0 layer=6 head=9 l_star=9 category_group=flip  final_winner=mass  advantage=-5.8142e-07
+
+----------------------------------------------------------------------------------------------------
+STRONGEST COUNTEREXAMPLE (smallest state-dependence S)
+----------------------------------------------------------------------------------------------------
+[pythia] prompt=2 layer=0 head=6 l_star=4 category_group=unresolved  final_winner=mass  advantage=-1.8292e-04
+
+----------------------------------------------------------------------------------------------------
+VERDICT
+----------------------------------------------------------------------------------------------------
+SDPH-A
