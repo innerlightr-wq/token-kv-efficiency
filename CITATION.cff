@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: >-
+  If you use or substantially adapt this software (the implementation,
+  experiment scripts, statistical-analysis code, or figure-generation
+  code), please cite it using the metadata below. If you use the
+  scientific results, methodology, interpretation, or figures, please
+  cite the associated paper instead (see preferred-citation).
+type: software
+title: "token-kv-efficiency"
+abstract: >-
+  Implementation, experiments, statistical analyses, and figure-generation
+  code for "Exact Local Output Perturbation in KV-Cache Eviction: Ranking
+  Inversions and Their Downstream Consequences."
+authors:
+  - family-names: "De Jesús"
+    given-names: "Elias"
+    orcid: "https://orcid.org/0009-0007-0190-9143"
+repository-code: "https://github.com/innerlightr-wq/token-kv-efficiency"
+license: MIT
+version: "0.1.0"
+date-released: "2026-09-10"
+preferred-citation:
+  type: unpublished
+  status: preprint
+  title: "Exact Local Output Perturbation in KV-Cache Eviction: Ranking Inversions and Their Downstream Consequences"
+  authors:
+    - family-names: "De Jesús"
+      given-names: "Elias"
+      orcid: "https://orcid.org/0009-0007-0190-9143"
+  doi: "10.5281/zenodo.22695261"
+  year: 2026
+  date-released: "2026-09-10"

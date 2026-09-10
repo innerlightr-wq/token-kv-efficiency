@@ -105,6 +105,41 @@ made that `d_B^local` predicts downstream damage universally.
 .venv/bin/python experiments/global_budget_curve.py
 ```
 
+## Citation
+
+This project has three distinct things you might want to attribute:
+the scientific paper, this software/repository, and the license terms that
+govern reusing the code. They are not the same, and citing one does not
+substitute for citing another.
+
+**1. Scientific paper.** If you use the mathematical results, empirical
+findings, methodology, interpretation, or figures, please cite the paper.
+The Zenodo DOI is the preferred citation for the scientific results of
+this project:
+
+> De Jesús, E. (2026). *Exact Local Output Perturbation in KV-Cache
+> Eviction: Ranking Inversions and Their Downstream Consequences*
+> (Version v1) [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.22695261
+
+**2. Software/repository.** If you use or substantially adapt the
+implementation, experiment scripts, statistical-analysis code, or
+figure-generation code, please cite the software using the metadata in
+[`CITATION.cff`](CITATION.cff) (GitHub's "Cite this repository" button
+reads this file automatically), e.g.:
+
+> De Jesús, E. (2026). *token-kv-efficiency* (Version 0.1.0) [Software].
+> https://github.com/innerlightr-wq/token-kv-efficiency
+
+**3. MIT License.** The [`LICENSE`](LICENSE) file governs reuse and
+redistribution of the code — it is a legal permission, not a scholarly
+citation. If you use the scientific results or figures, please cite the
+Zenodo paper. If you use or adapt the implementation or experimental code,
+please also cite the software repository. Code reuse is governed by the
+MIT License. Researchers who rely materially on both the scientific
+results and the software implementation are encouraged to cite both the
+paper and the repository; this is a citation norm, not a licensing
+requirement — the MIT License does not itself mandate citation.
+
 ## License
 
 The software in this repository is released under the MIT License. See
