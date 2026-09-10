@@ -1,9 +1,9 @@
 ---
 name: claim-ledger
-description: Manuscript claim ledger for token_kv_eviction.tex Draft 1 — every claim, its status, evidence, prior art, and exact supporting file.
+description: Manuscript claim ledger for token_kv_eviction.tex — every claim, its status, evidence, prior art, and exact supporting file.
 ---
 
-# Claim Ledger — Exact Local Output Perturbation in KV-Cache Eviction (Draft 1)
+# Claim Ledger — Exact Local Output Perturbation in KV-Cache Eviction
 
 Statuses used: **THEOREM**, **COMPUTATIONAL**, **REPLICATED COMPUTATIONAL**, **NEGATIVE RESULT**, **INTERPRETATION**, **LIMITATION**.
 
