@@ -270,6 +270,37 @@ def label_format_constraint(tok, gen_ids, accepted):
     return failure, t_F, full
 
 
+
+def label_forbidden_word(tok, gen_ids, word="water"):
+    """AMENDMENT 1 family F. `failure = 1` iff the generation contains `word`.
+    `t_F` = first token index whose decoded prefix first contains it, so the
+    violation occurs mid-generation and a warning interval can exist."""
+    full = tok.decode(gen_ids, skip_special_tokens=True)
+    failure = int(word.lower() in full.lower())
+    t_F = None
+    if failure:
+        for t in range(len(gen_ids)):
+            if word.lower() in tok.decode(gen_ids[: t + 1], skip_special_tokens=True).lower():
+                t_F = t
+                break
+    return failure, t_F, full
+
+
+def label_max_words(tok, gen_ids, max_words=3):
+    """AMENDMENT 1 family G. `failure = 1` iff the generation has more than
+    `max_words` whitespace-separated words. `t_F` = first token index at which
+    the running word count exceeds the bound."""
+    full = tok.decode(gen_ids, skip_special_tokens=True)
+    failure = int(len(full.split()) > max_words)
+    t_F = None
+    if failure:
+        for t in range(len(gen_ids)):
+            if len(tok.decode(gen_ids[: t + 1], skip_special_tokens=True).split()) > max_words:
+                t_F = t
+                break
+    return failure, t_F, full
+
+
 REFUSAL_MARKERS = ["i'm sorry", "i am sorry", "i can't", "i cannot", "i won't",
                    "i will not", "i am unable", "i'm unable", "sorry, but",
                    "i do not", "i don't think i can", "as an ai"]
