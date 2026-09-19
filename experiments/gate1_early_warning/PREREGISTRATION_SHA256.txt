@@ -1,0 +1,3 @@
+# SHA-256 of docs/GATE1_EARLY_WARNING_PREREGISTRATION.md
+bb3b4572ef6eac5facd54232ebda12acd8500583535afa8a745e4ecd2b721498  as preregistered, before any run (commit 81e1a52)
+58dc5e8199cbb4acc829ef8f599ea70fd31e9f36af9aa9cb15cb99b2f1272eff  after AMENDMENT 1 (2026-09-19), appended post-primary-run
