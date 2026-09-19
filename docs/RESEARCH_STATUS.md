@@ -51,7 +51,12 @@ same model/prompts/layers/heads/block construction/seed as the original):
 | F10: median within-head Spearman(Tier-A KL, Tier-B KL) | ≈0.086 | **0.086** |
 
 n=96 records, 4 layers × 4 heads × 2 prompts × ~3 blocks/stratum. **F10
-fires** (0.086 < 0.7 threshold). Per the milestone framing: this is
+fires** (0.086 < 0.7 threshold). **The F10 value is not portable**: an
+independent Linux reproduction at the same seed and model revision obtained
+**0.2571**, with 8 of 13 per-stratum coefficients differing and stratum 7_6
+flipping from −0.3143 to +0.8286. At n=6 blocks per stratum Spearman is
+coarsely quantised and a float-level difference flips rank pairs. Quote the
+verdict (far below 0.7), not the digits — see `docs/REPRODUCTION_AUDIT.md`. Per the milestone framing: this is
 **preliminary real-model evidence against the current F10 within-head
 ranking hypothesis**, not "falsified," not "disproved," not "useless
 metric" — and it is far below the preregistered minimum of 10
@@ -159,13 +164,36 @@ does not resolve below q=0.1 for this model/prompt combination.
 None repository-blocking. One real, reported failure mode (Phase 12): of
 ~2100 stratum-eviction attempts in the global budget experiment, **237
 (~11%) hit the exact `m_B → 1` singularity guard and were silently-to-the-
-policy-but-not-to-the-report skipped** — driven by the allocator's
-`max_frac=0.95` bound combined with short prompts and concentrated
-(sink-like) attention in some heads. `global_eviction` surfaces every skip
+policy-but-not-to-the-report skipped**. `global_eviction` surfaces every skip
 in its return value rather than absorbing it; `n_singularity_skips` is
 recorded in every `results/milestone2_global_budget/summary.json` run.
 This is exactly the numerical edge the `local_algebra.py` `m_B → 1` test
-predicted would need handling, now observed for real. (The old base-conda
+predicted would need handling, now observed for real.
+
+**Cause and consequence, corrected by the reproduction audit** (full detail in
+`docs/SINGULARITY_FINDINGS.md`). The skip count reproduces exactly (237 of
+2100). The cause stated in earlier rounds — "concentrated (sink-like)
+attention" — is half right: concentration yes, *sink* no. Because key 0 is
+protected in every experiment, a head with a healthy position-0 sink can never
+trigger the guard; in synthetic tests a 0.9 sink makes it unfireable. The
+guard fires in the opposite case: near-one-hot layers 9/11 heads (median
+entropy ≤ 0.006 nats, median effective support 1.00) where the sink weight at
+the protected key collapses to numerically zero — all 851 singular query rows
+have `alpha[q,0] < 1e-9`, median 2.03e-17. It is not a causal-window artifact
+either: under perfectly uniform causal attention the guard never fires even at
+95% eviction, and 0 of 851 singular rows had their causal window fully
+evicted. The name is therefore misleading; "degenerate-support eviction guard"
+is the accurate description.
+
+The consequence is larger than "a skipped stratum". The guard is quantified
+with `any()` over *every* query row, while the rankings are built from the
+last row and the KL is read at the last position. Only **12 of 237** skips
+have the measured row singular, and **214 of 237** are in layer 11, where a
+perturbation at any row but the last contributes *exactly* 0.0 to the measured
+position. Net effect: **13.36% of planned eviction is never applied (16.27% at
+q=0.5) with no change in measured KL**, while `n_entries_removed` and
+`estimated_bytes_saved` continue to report the unreduced plan. The KL curves
+are unaffected; the memory axis of the efficiency frontier is overstated. (The old base-conda
 OpenMP conflict remains diagnosed, not an obstruction — see below.)
 
 ## Environment note

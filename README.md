@@ -26,8 +26,13 @@ EXPLORATORY RESULT / OPEN).
 **Known limitation, stated up front:** a strong *pooled* association
 between the local damage score and downstream KL divergence does not imply
 strong *within-head* block ranking. The reproduced pilot shows pooled
-Spearman ≈0.86 alongside a preregistered within-head statistic of ≈0.09 —
-see `docs/RESEARCH_STATUS.md` for what that does and does not mean.
+Spearman ≈0.86 alongside a preregistered within-head statistic well below the
+0.7 threshold — see `docs/RESEARCH_STATUS.md` for what that does and does not
+mean. The *direction* of that second number is robust; its digits are not. It
+is a median of 13 Spearman coefficients computed on ~6 blocks each, and an
+independent Linux reproduction of the same seed and model revision moved it
+from 0.086 to 0.257, with 8 of 13 per-stratum values differing and one
+flipping sign (`docs/REPRODUCTION_AUDIT.md`).
 
 ## Provenance
 
@@ -63,6 +68,13 @@ docs/
     RESEARCH_STATUS.md           -- read this before quoting any number
     MIGRATION_NOTES.md
     EXPERIMENT_PROTOCOL.md       -- audited definitions (m_B, r_B, Tier A/B, F10)
+    METRIC_DEFINITIONS.md        -- every metric, its domain, and what it depends on
+    SINGULARITY_FINDINGS.md      -- what the `m_B -> 1` guard actually detects
+    NOVELTY_AND_PROVENANCE.md    -- prior art, feature by feature
+    REPRODUCTION_AUDIT.md        -- independent reproduction, platform to platform
+    CLAIM_LEDGER.md              -- claims, reproduction status, recommended wording
+    ALIGNMENT_RELEVANCE.md       -- why this is not an alignment result
+references.bib                   -- verified bibliography (32 entries)
 ```
 
 ## Environment
@@ -98,6 +110,20 @@ showed no consistent advantage over a uniform budget. Both are real,
 checked null results, not failures to find something that was assumed to
 be there. No wall-clock speedup is measured or claimed, and no claim is
 made that `d_B^local` predicts downstream damage universally.
+
+**Both nulls are scope-limited, and the literature disagrees at scale.** VATP
+(EMNLP 2024) reports that value-aware token importance *beats*
+attention-score-only ranking on more than 12 of 16 LongBench tasks at 7B; and
+PyramidKV and Ada-KV report that non-uniform layer/head budgets *do* help.
+Those are 7B-class models on real long-context tasks; this is a 160M model on
+three synthetic prompts with KL read at one token position. The nulls here are
+the weaker evidence and should not be read as "value geometry does not help"
+or "non-uniform allocation does not help" — see
+`docs/NOVELTY_AND_PROVENANCE.md`. Two further caveats established by the
+reproduction audit: `estimated_bytes_saved` overstates realised eviction by
+13.36% (the guard silently skips strata after the count is taken), and no
+memory is actually freed by any experiment, because eviction is implemented as
+an additive delta on head outputs rather than by compacting a cache.
 
 ```bash
 # Milestone 2
